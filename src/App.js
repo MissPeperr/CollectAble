@@ -1,14 +1,26 @@
-import React, { Component } from 'react';
-import './App.css';
+import { Component } from "react";
+import React from "react";
+import Login from "./components/login/loginDOM";
+import { Route } from "react-router-dom";
+import ApplicationViews from "./components/ApplicationViews";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-      <h1>Start of the midstone!</h1>
-      </div>
-    );
-  }
-}
 
-export default App;
+export default class App extends Component {
+    // Check if credentials are in local storage
+    isAuthenticated = () => (localStorage.getItem("credentials") !== null) || (sessionStorage.getItem("credentials") !== null)    
+    render() {
+        return (
+            <React.Fragment>
+                {
+                    !this.isAuthenticated() &&
+                    <Route exact path="/login" render={(props) => {
+                        return <Login {...props} />
+                    }} />
+                }
+                {
+                    <ApplicationViews isAuthenticated={this.isAuthenticated}/>
+                }
+            </React.Fragment>
+        )
+    }
+} 
