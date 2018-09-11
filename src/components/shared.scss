@@ -1,0 +1,7 @@
+@mixin add-new-card($bg-color, $style, $color, $size...) {
+    background-color: $bg-color;
+    border-color: $bg-color;
+    -webkit-box-shadow: $style $size $color;
+    -moz-box-shadow: $style $size $color;
+    box-shadow: $style $size $color;
+}
