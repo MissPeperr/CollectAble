@@ -1,0 +1,10 @@
+@import 'components/shared.scss';
+
+.add-collection-card {
+    margin: 2rem 2rem 2rem 2rem;
+
+    .add-collection-btn {
+        @include add-new-card(#b3b3b3, inset, 0px 0px 17px 5px, rgba(148,148,148,1));
+        
+    }
+}

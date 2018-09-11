@@ -1,0 +1,42 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Madi",
+            "lastName": "Peper",
+            "DOB": "09/11/1995",
+            "email": "me@me.com",
+            "password": "me"
+        }
+    ],
+    "collections": [
+        {
+            "id": 1,
+            "userId": 1,
+            "title": "TsumTsums",
+            "description": "All of my Disney TsumTsums!"
+        }
+    ],
+    "collectables": [
+        {
+            "id": 1,
+            "collectionId": 1,
+            "groupId": 1,
+            "title": "Mickey Mouse",
+            "description": "He's cute!",
+            "image": "",
+            "boughtPrice": "$0.00",
+            "soldPrice": "",
+            "isSold": false
+        }
+    ],
+    "groups": [
+        {
+            "id": 1,
+            "collectionId": 1,
+            "title": "Favorites",
+            "description": "All of my favorite tsums!"
+            
+        }
+    ]
+}
