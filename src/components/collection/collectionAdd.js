@@ -5,9 +5,10 @@ class CollectionAdd extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: true,
-      title: undefined,
-      description: undefined
+      modal: false,
+      visible: false,
+      title: null,
+      description: null
     };
     this.onDismiss = this.onDismiss.bind(this);
 
@@ -22,7 +23,7 @@ class CollectionAdd extends Component {
   onDismiss() {
     this.setState({ visible: false });
   }
-  
+
   createNewCollection = evt => {
     evt.preventDefault()
     const collection = {
@@ -30,16 +31,15 @@ class CollectionAdd extends Component {
       description: this.state.description,
       // userId: this.props.user.id
     }
-    if (collection.title === undefined){
-      return (
-        <Alert color="danger" isOpen={this.state.visible} toggle={this.onDismiss}>
-          I am an alert and I can be dismissed!
-        </Alert>
-        )     
-      } else {
+    if (collection.title === null) {
+        this.setState({
+          visible: true
+        })
+    } else {
       this.setState({
-        title: undefined,
-        description: undefined,
+        modal: !this.state.modal,
+        title: null,
+        description: null,
       })
       this.props.addCollection("collections", collection)
     }
@@ -51,6 +51,12 @@ class CollectionAdd extends Component {
         <Modal isOpen={this.props.modal} toggle={this.toggle} className="add-collection-modal">
           <ModalHeader toggle={this.props.toggle}>Create A New Collection!</ModalHeader>
           <ModalBody>
+          {
+           this.state.visible && 
+         <Alert color="danger" onClick={this.onDismiss}>
+          You don't have a name for your Collection!
+        </Alert>
+         }
             <FormGroup>
               <Label>Name of your Collection:</Label>
               <Input id="title"

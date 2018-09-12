@@ -17,19 +17,14 @@
       "description": "All of my Disney TsumTsums!"
     },
     {
-      "title": "hey",
-      "description": "hey",
+      "title": "Disney Pins",
+      "description": "Pins from the Disney Parks",
       "id": 2
     },
     {
-      "title": "Watches",
-      "description": "I like these",
+      "title": "Knives",
+      "description": "Russ's stuff",
       "id": 3
-    },
-    {
-      "title": "Hey",
-      "description": "",
-      "id": 4
     }
   ],
   "collectables": [

@@ -3,6 +3,6 @@
   .add-collection-card .add-collection-btn {
     background-color: #b3b3b3;
     border-color: #b3b3b3;
-    -webkit-box-shadow: inset #949494 0px 0px 17px 5px;
-    -moz-box-shadow: inset #949494 0px 0px 17px 5px;
-    box-shadow: inset #949494 0px 0px 17px 5px; }
+    -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
+    -moz-box-shadow: inset 0px 0px 17px 5px #949494;
+    box-shadow: inset 0px 0px 17px 5px #949494; }
