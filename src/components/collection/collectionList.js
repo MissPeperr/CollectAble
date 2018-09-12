@@ -21,8 +21,8 @@ class CollectionList extends Component {
         });
       }
 
+
     render(){
-        console.log(this.props.collections)
         return (
             <div className="collection-list-container">
                 <h3>Collection List</h3>
@@ -32,7 +32,7 @@ class CollectionList extends Component {
                             <Button className="add-collection-btn" onClick={this.toggle}>
                                 <CardTitle>+</CardTitle>
                                 <CardText>Create a new Collection</CardText>
-                                <CollectionAdd modal={this.state.modal} toggle={this.toggle}/>
+                                <CollectionAdd modal={this.state.modal} toggle={this.toggle} addCollection={this.props.addCollection} {...this.props}/>
                             </Button>
                             </Card>
                         </Col>
@@ -42,7 +42,7 @@ class CollectionList extends Component {
                         this.props.collections.map(collection =>
                             <CollectionCard key={collection.id} currentCollection={collection} {...this.props}/>
                         )
-
+                        
                     }
                     </section>
 

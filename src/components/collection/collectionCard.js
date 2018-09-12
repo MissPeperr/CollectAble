@@ -9,7 +9,7 @@ class CollectionCard extends Component {
         return(
             <div className="collection-card">
                         <Card>
-                            <Button>
+                            <Button color="info">
                                 <CardBody>
                                 <CardTitle className="collection-title">{this.props.currentCollection.title}</CardTitle>
                                 <CardSubtitle className="collection-description">{this.props.currentCollection.description}</CardSubtitle>

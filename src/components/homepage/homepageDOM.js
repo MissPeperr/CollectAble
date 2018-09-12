@@ -22,14 +22,25 @@ class HomePage extends Component {
             this.setState(newState)
         });
     }
+
+    addCollection = (string, collection) => {
+        DataManager.add(string, collection)
+        .then(() => DataManager.getAll("collections"))
+        .then(collections => 
+            this.setState({
+                collections: collections
+        }))
+    }
+
     render() {
         return (
             <div>
                 <h5>CollectAble</h5>
-                <CollectionList collections={this.state.collections}/>
+                <CollectionList collections={this.state.collections} addCollection={this.addCollection}/>
             </div>
         )
     }
 }
+
 
 export default HomePage

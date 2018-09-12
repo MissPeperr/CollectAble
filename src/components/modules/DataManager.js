@@ -2,20 +2,20 @@ const remoteURL = "http://localhost:5002"
 
 export default Object.create(null, {
     get: {
-        value: (key, id) => {
-            return fetch(`${remoteURL}/${key}/${id}`)
+        value: (resource, id) => {
+            return fetch(`${remoteURL}/${resource}/${id}`)
             .then(result => result.json())
         }
     },
     getAll: {
-        value: (key) => {
-            return fetch(`${remoteURL}/${key}`)
+        value: (resource) => {
+            return fetch(`${remoteURL}/${resource}`)
             .then(result => result.json())
         }
     },
     getUserData: {
-        value: (key, userId) => {
-            return fetch(`${remoteURL}/${key}?userId=${userId}`)
+        value: (resource, userId) => {
+            return fetch(`${remoteURL}/${resource}?userId=${userId}`)
             .then(res => res.json())
         }
     },
@@ -26,21 +26,21 @@ export default Object.create(null, {
         }
     },
     getSortedData: {
-        value: (key, userId, sortBy, order) => {
-            return fetch(`${remoteURL}/${key}?userId=${userId}&_sort=${sortBy}&_order=${order}`)
+        value: (resource, userId, sortBy, order) => {
+            return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=${sortBy}&_order=${order}`)
             .then(res => res.json())
         }
     },
     delete: {
-        value: (key, id) => {
-            return fetch(`${remoteURL}/${key}/${id}`, {
+        value: (resource, id) => {
+            return fetch(`${remoteURL}/${resource}/${id}`, {
                 method: "DELETE"
             }).then(result => result.json())
         }
     },
     add: {
-        value: (key, object) => {
-            return fetch(`${remoteURL}/${key}`, {
+        value: (resource, object) => {
+            return fetch(`${remoteURL}/${resource}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -51,8 +51,8 @@ export default Object.create(null, {
         }
     },
     edit: {
-        value: (key, id, object) => {
-            return fetch(`${remoteURL}/${key}/${id}`, {
+        value: (resource, id, object) => {
+            return fetch(`${remoteURL}/${resource}/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
