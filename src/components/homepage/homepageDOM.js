@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DataManager from '../modules/DataManager'
+import NavBar from '../navbar/navbar'
 import CollectionList from '../collection/collectionList'
 
 
@@ -35,7 +36,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <h5>CollectAble</h5>
+                <NavBar />
                 <CollectionList collections={this.state.collections} addCollection={this.addCollection}/>
             </div>
         )
