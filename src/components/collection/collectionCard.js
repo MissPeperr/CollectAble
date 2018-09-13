@@ -2,9 +2,7 @@ import React from 'react'
 import { Card, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const CollectionCard = ({ match, currentCollection}) => {
-    // this is creating a page name to show only that collection
-
+const CollectionCard = ({ currentCollection }) => {
     // DON'T FORGET TO ADD A TRASH CAN FOR DELETE IN TOP RIGHT CORNER
     // const collectionPageName = currentCollection.title.split(" ").join("")
     // console.log(match)

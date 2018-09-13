@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { Alert, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 import DataManager from '../modules/DataManager';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

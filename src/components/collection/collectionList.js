@@ -43,7 +43,11 @@ class CollectionList extends Component {
                 <section className="collection-card-container">
                     {
                         this.props.collections.map(collection =>
-                            <CollectionCard key={collection.id} currentCollection={collection} collections={this.props.collections} collectables={this.props.collectables} {...this.props} />
+                            <CollectionCard
+                                key={collection.id}
+                                currentCollection={collection}
+                                collections={this.props.collections}
+                                collectables={this.props.collectables} {...this.props} />
                         )
 
                     }

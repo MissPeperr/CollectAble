@@ -27,6 +27,12 @@
       "title": "Stamps",
       "description": "All of the Stamps",
       "id": 3
+    },
+    {
+      "title": "Books",
+      "description": "All the books",
+      "userId": 1,
+      "id": 4
     }
   ],
   "collectables": [

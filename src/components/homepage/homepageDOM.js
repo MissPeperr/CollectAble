@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import DataManager from '../modules/DataManager';
 import NavBar from '../navbar/navbar';
-import Register from '../login/registerDOM';
+// import Register from '../login/registerDOM';
 import CollectionList from '../collection/collectionList';
 import CollectablePage from '../collectable/collectableList';
 
@@ -25,6 +25,8 @@ class HomePage extends Component {
         newState.user = localUser;
         DataManager.getUserData("collections", localUser.id)
         .then((collections) => { newState.collections = collections })
+        .then(() => DataManager.getUserData("collectables", localUser.id))
+        .then((collectables) => { newState.collectables = collectables })
         .then(() => DataManager.getAll("users"))
         .then(users => {newState.allUsers = users})
         .then(() => {
@@ -60,9 +62,9 @@ class HomePage extends Component {
                             collectables={this.state.collectables}
                             collections={this.state.collections} />
                     }} />
-                    <Route exact path="/login/register" render={(props) => {
+                    {/* <Route exact path="/login/register" render={(props) => {
                         return <Register {...props} />
-                    }} />
+                    }} /> */}
             </React.Fragment>
         )
     }

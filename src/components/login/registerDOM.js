@@ -32,7 +32,9 @@ export default class Register extends Component {
                 let loginUser = users.find(user => user.username === this.state.registerUsername && user.email === this.state.registerEmail)
                 console.log(loginUser)
                 if (loginUser) {
-                    <Alert color="danger">This email has already been registered</Alert>
+                    return(
+                        <Alert color="danger">This email has already been registered</Alert>
+                    )
                 } else {
                     let newUser = {
                         password: this.state.registerPassword,

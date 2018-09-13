@@ -5,7 +5,6 @@ class CollectionAdd extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
       visible: false,
       title: null,
       description: null
@@ -25,19 +24,18 @@ class CollectionAdd extends Component {
   }
 
   createNewCollection = () => {
-    console.log("userId:", this.props.user)
     const collection = {
       title: this.state.title,
       description: this.state.description,
       userId: this.props.user.id
     }
     if (collection.title === null) {
-        this.setState({
-          visible: true
-        })
-    } else {
       this.setState({
-        modal: !this.state.modal,
+        visible: true,
+      })
+    } else {
+      this.props.toggle()
+      this.setState({
         title: null,
         description: null,
       })
@@ -48,15 +46,15 @@ class CollectionAdd extends Component {
   render() {
     return (
       <div>
-        <Modal isOpen={this.props.modal} toggle={this.toggle} className="add-collection-modal">
+        <Modal isOpen={this.props.modal} toggle={this.props.toggle} className="add-collection-modal">
           <ModalHeader toggle={this.props.toggle}>Create A New Collection!</ModalHeader>
           <ModalBody>
-          {
-           this.state.visible && 
-         <Alert color="danger" onClick={this.onDismiss}>
-          You don't have a name for your Collection!
-        </Alert>
-         }
+            {
+              this.state.visible &&
+              <Alert color="danger" onClick={this.onDismiss}>
+                You don't have a name for your Collection!
+              </Alert>
+            }
             <FormGroup>
               <Label>Name of your Collection:</Label>
               <Input id="title"

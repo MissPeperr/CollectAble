@@ -36,15 +36,15 @@ class CollectableAdd extends Component {
         this.setState({ visible: false });
     }
 
-    createNewCollection = evt => {
+    createNewCollectable = evt => {
         evt.preventDefault()
-        const collection = {
+        const collectable = {
             title: this.state.title,
             description: this.state.description,
             image: this.state.image,
             userId: this.props.user.id
         }
-        if (collection.title === null) {
+        if (collectable.title === null) {
             this.setState({
                 visible: true
             })
@@ -55,15 +55,15 @@ class CollectableAdd extends Component {
                 description: null,
                 image: null
             })
-            this.props.addCollection("collections", collection)
+            this.props.addCollectable("collectables", collectable)
         }
     }
 
     render() {
         return (
             <div>
-                <Modal isOpen={this.props.modal} toggle={this.toggle} className="add-collection-modal">
-                    <ModalHeader toggle={this.props.toggle}>Create A New Collection!</ModalHeader>
+                <Modal isOpen={this.props.modal} toggle={this.toggle} className="add-collectable-modal">
+                    <ModalHeader toggle={this.props.toggle}>Create A New Collectable!</ModalHeader>
                     <ModalBody className="collectable-modal-body">
                         {
                             this.state.visible &&
@@ -87,11 +87,11 @@ class CollectableAdd extends Component {
                                 placeholder="Description" />
                             <Label for="image">Upload an image</Label>
                             <input type="file" onChange={this.handleChange} />
-                            <img className="user-input-img" src={this.state.file} />
+                            <img className="user-input-img" src={this.state.file} alt={this.state.title}/>
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={this.createNewCollection}>Create</Button>{' '}
+                        <Button color="primary" onClick={this.createNewCollectable}>Create</Button>{' '}
                     </ModalFooter>
                 </Modal>
             </div>
