@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default class ApplicationViews extends Component {
 
     render() {
+        console.log("render application views")
         return (
             <React.Fragment>
                 {
@@ -20,6 +21,7 @@ export default class ApplicationViews extends Component {
                     </div>
                 }
                 {
+                    
                     !this.props.isAuthenticated() &&
                     <Redirect to="/login" />
                 }

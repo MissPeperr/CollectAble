@@ -17,13 +17,15 @@
       "description": "All of my Disney TsumTsums!"
     },
     {
+      "userId": 1,
       "title": "Disney Pins",
       "description": "Pins from the Disney Parks",
       "id": 2
     },
     {
-      "title": "Knives",
-      "description": "Russ's stuff",
+      "userId": 2,
+      "title": "Stamps",
+      "description": "All of the Stamps",
       "id": 3
     }
   ],

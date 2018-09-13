@@ -1,0 +1,11 @@
+.add-collectable-card {
+  margin: 2rem 2rem 2rem 2rem; }
+  .add-collectable-card .add-collectable-btn {
+    background-color: #b3b3b3;
+    border-color: #b3b3b3;
+    -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
+    -moz-box-shadow: inset 0px 0px 17px 5px #949494;
+    box-shadow: inset 0px 0px 17px 5px #949494; }
+
+.user-input-image {
+  width: 50%; }

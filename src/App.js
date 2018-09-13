@@ -6,9 +6,10 @@ import ApplicationViews from "./components/ApplicationViews";
 
 
 export default class App extends Component {
-    // Check if credentials are in local storage
-    isAuthenticated = () => (localStorage.getItem("credentials") !== null) || (sessionStorage.getItem("credentials") !== null)    
+    // Check if user are in local/session storage
+    isAuthenticated = () => (localStorage.getItem("user") !== null) || (sessionStorage.getItem("user") !== null)    
     render() {
+        console.log("render app.js")
         return (
             <React.Fragment>
                 {

@@ -24,12 +24,12 @@ class CollectionAdd extends Component {
     this.setState({ visible: false });
   }
 
-  createNewCollection = evt => {
-    evt.preventDefault()
+  createNewCollection = () => {
+    console.log("userId:", this.props.user)
     const collection = {
       title: this.state.title,
       description: this.state.description,
-      // userId: this.props.user.id
+      userId: this.props.user.id
     }
     if (collection.title === null) {
         this.setState({
