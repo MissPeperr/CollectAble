@@ -42,10 +42,39 @@
       "groupId": 1,
       "title": "Mickey Mouse",
       "description": "He's cute!",
-      "imageURL": "example-code.jpg",
+      "imageURL": "http://res.cloudinary.com/midstone-collectable/image/upload/ar_1:1,c_lfill,g_auto,w_250/v1536938467/IMG_20180913_073150.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": "",
       "isSold": false
+    },
+    {
+      "title": "Dumbo Pin",
+      "description": "Christmas Dumbo Pin from DisneyWorld",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536949088/gr4br05kzogrj8omqesy.jpg",
+      "boughtPrice": null,
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 1,
+      "id": 2
+    },
+    {
+      "title": "Medium Dumbo",
+      "description": "Medium Sized Dumbo",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536950232/jhulr8uflgzwmxtwtcsp.jpg",
+      "boughtPrice": null,
+      "soldPrice": null,
+      "isSold": false,
+      "id": 3
+    },
+    {
+      "title": "Spring Elsa",
+      "description": null,
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536950411/wmetcimdjnbxycnkujpf.jpg",
+      "boughtPrice": null,
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 1,
+      "id": 4
     }
   ],
   "groups": [

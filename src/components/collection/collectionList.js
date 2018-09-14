@@ -5,6 +5,9 @@ import CollectionAdd from './collectionAdd'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './collection.css'
 
+
+
+
 class CollectionList extends Component {
     constructor(props) {
         super(props);
@@ -13,6 +16,7 @@ class CollectionList extends Component {
         };
 
         this.toggle = this.toggle.bind(this);
+
     }
 
     toggle = () => {

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import DataManager from '../modules/DataManager';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Alert } from 'reactstrap';
+
+const uploadPreset = 'collectable';
+const uploadURL = 'https://api.cloudinary.com/v1_1/midstone-collectable/image/upload';
 
 class CollectableAdd extends Component {
     constructor(props) {
@@ -15,18 +19,21 @@ class CollectableAdd extends Component {
             imageURL: null,
             boughtPrice: null,
             soldPrice: null,
+            collectionId: this.props.collection,
             isSold: false
         };
         this.onDismiss = this.onDismiss.bind(this);
         this.handleChange = this.handleChange.bind(this)
+
 
     }
 
     // this is the functionality for react-dropzone to upload images
     onImageDrop(files) {
         this.setState({
-          uploadedFile: files[0]
+            uploadedFile: files[0]
         });
+        this.handleImageUpload(files[0]);
     }
     //changes state whenever an input field has changed
     handleFieldChange = evt => {
@@ -44,17 +51,46 @@ class CollectableAdd extends Component {
     onDismiss() {
         this.setState({ visible: false });
     }
+    handleImageUpload(file) {
+        let upload = request.post(uploadURL)
+            .field('upload_preset', uploadPreset)
+            .field('file', file);
+
+        upload.end((err, response) => {
+            if (err) {
+                console.error(err);
+            }
+
+            if (response.body.secure_url !== '') {
+                this.setState({
+                    imageURL: response.body.secure_url
+                });
+            }
+        });
+    }
+
+    // the getCollectables function needs to get the CURRENT collection id
+    // right now it's just going to the state and grabbing all of them
+    addCollectable = (string, collectable) => {
+        DataManager.add(string, collectable)
+            .then(() => DataManager.getCollectables("collectables", this.props.collection.id))
+            .then(collectables => {
+                this.setState({
+                    collectables: collectables
+                })
+            })
+    }
 
     createNewCollectable = evt => {
         evt.preventDefault()
         const collectable = {
             title: this.state.title,
             description: this.state.description,
-            image: this.state.image,
+            imageURL: this.state.imageURL,
             boughtPrice: this.state.boughtPrice,
             soldPrice: null,
             isSold: false,
-            collectableId: this.props.collectable.id
+            collectionId: this.props.collection
         }
         if (collectable.title === null) {
             this.setState({
@@ -65,14 +101,15 @@ class CollectableAdd extends Component {
                 modal: !this.state.modal,
                 title: null,
                 description: null,
-                image: null,
+                imageURL: null,
                 boughtPrice: null
             })
-            this.props.addCollectable("collectables", this.props.collection.id)
+            this.props.addCollectable("collectables", collectable)
         }
     }
 
     render() {
+        console.log(this.props.collection)
         return (
             <div>
                 <Modal isOpen={this.props.modal} toggle={this.toggle} className="add-collectable-modal">
@@ -104,15 +141,25 @@ class CollectableAdd extends Component {
                                 type="text"
                                 onChange={this.handleFieldChange}
                                 placeholder="$0.00" />
-                            {/* <Label for="image">Upload an image</Label>
-                            <input type="file" onChange={this.handleChange} />
-                            <img className="user-input-img" src={this.state.file} alt={this.state.title}/> */}
                             <Dropzone
                                 multiple={false}
                                 accept="image/*"
                                 onDrop={this.onImageDrop.bind(this)}>
                                 <p>Drop an image or click to select a file to upload.</p>
                             </Dropzone>
+                            <div>
+                                <div className="FileUpload">
+                                    ...
+                            </div>
+
+                                <div>
+                                    {this.state.uploadURL === '' ? null :
+                                        <div>
+                                            <p>{this.state.title}</p>
+                                            <img className="preview-img" src={this.state.uploadURL} />
+                                        </div>}
+                                </div>
+                            </div>
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>

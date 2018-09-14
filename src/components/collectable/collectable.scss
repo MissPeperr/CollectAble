@@ -9,6 +9,11 @@
     }
 }
 
-.user-input-image {
-    width: 50%;
+.user-input-img {
+    max-width: 25% !important;
+    max-height: 25% !important;
+}
+
+.preview-img {
+    max-width: 30%;
 }

@@ -39,15 +39,6 @@ class HomePage extends Component {
                 }))
     }
 
-    addCollectable = (string, collectable) => {
-        DataManager.add(string, collectable)
-            .then(()=> DataManager.getCollectables("collectables", this.state.collection.id))
-            .then(collectables => {
-                this.setState({
-                    collectables: collectables
-                })
-            })
-    }
 
     render() {
         console.log("render homepage")

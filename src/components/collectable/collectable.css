@@ -7,5 +7,9 @@
     -moz-box-shadow: inset 0px 0px 17px 5px #949494;
     box-shadow: inset 0px 0px 17px 5px #949494; }
 
-.user-input-image {
-  width: 50%; }
+.user-input-img {
+  max-width: 25% !important;
+  max-height: 25% !important; }
+
+.preview-img {
+  max-width: 30%; }

@@ -22,8 +22,9 @@ export default class CollectablePage extends Component {
 
 
     render() {
-        const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
 
+        const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
+        console.log("collection id:", collection.id)
         return (
             <div className="collectable-list-container">
                 <h4>{collection.title}</h4>
@@ -36,6 +37,7 @@ export default class CollectablePage extends Component {
                                 <CollectableAdd
                                     modal={this.state.modal}
                                     toggle={this.toggle}
+                                    collection={collection.id}
                                     addCollectable={this.props.addCollectable} {...this.props} />
                             </Button>
                         </Card>
@@ -47,7 +49,6 @@ export default class CollectablePage extends Component {
                             <CollectableCard
                                 key={collectable.id}
                                 currentCollectable={collectable}
-                                collections={this.props.collections}
                                 collectables={this.props.collectables} {...this.props} />
                         )
 
