@@ -20,7 +20,7 @@ class HomePage extends Component {
         newState.user = localUser;
         DataManager.getUserData("collections", localUser.id)
             .then((collections) => { newState.collections = collections })
-            .then(() => DataManager.getUserData("collectables", localUser.id))
+            .then(() => DataManager.getCollectables("collectables"))
             .then((collectables) => { newState.collectables = collectables })
             .then(() => DataManager.getAll("users"))
             .then(users => { newState.allUsers = users })
@@ -39,6 +39,16 @@ class HomePage extends Component {
                 }))
     }
 
+    addCollectable = (string, collectable) => {
+        DataManager.add(string, collectable)
+            .then(()=> DataManager.getCollectables("collectables", this.state.collection.id))
+            .then(collectables => {
+                this.setState({
+                    collectables: collectables
+                })
+            })
+    }
+
     render() {
         console.log("render homepage")
 
@@ -48,13 +58,15 @@ class HomePage extends Component {
                             return <CollectionList {...props}
                                 user={this.state.user}
                                 collections={this.state.collections}
+                                collectables={this.state.collectables} 
                                 addCollection={this.addCollection}
-                                collectables={this.state.collectables} />
+                                />
                         }} />
                         <Route exact path="/collection/:collectionId(\d+)" render={(props) => {
                             return <CollectablePage {...props}
                                 collectables={this.state.collectables}
-                                collections={this.state.collections} />
+                                collections={this.state.collections}
+                                addCollectable={this.addCollectable} />
                         }} />
                         {/* <Route exact path="/login/register" render={(props) => {
                         return <Register {...props} />

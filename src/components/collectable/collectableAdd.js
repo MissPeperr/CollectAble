@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Alert } from 'reactstrap';
 
 class CollectableAdd extends Component {
@@ -10,7 +12,7 @@ class CollectableAdd extends Component {
             file: null,
             title: null,
             description: null,
-            image: null,
+            imageURL: null,
             boughtPrice: null,
             soldPrice: null,
             isSold: false
@@ -18,6 +20,13 @@ class CollectableAdd extends Component {
         this.onDismiss = this.onDismiss.bind(this);
         this.handleChange = this.handleChange.bind(this)
 
+    }
+
+    // this is the functionality for react-dropzone to upload images
+    onImageDrop(files) {
+        this.setState({
+          uploadedFile: files[0]
+        });
     }
     //changes state whenever an input field has changed
     handleFieldChange = evt => {
@@ -42,7 +51,10 @@ class CollectableAdd extends Component {
             title: this.state.title,
             description: this.state.description,
             image: this.state.image,
-            userId: this.props.user.id
+            boughtPrice: this.state.boughtPrice,
+            soldPrice: null,
+            isSold: false,
+            collectableId: this.props.collectable.id
         }
         if (collectable.title === null) {
             this.setState({
@@ -53,9 +65,10 @@ class CollectableAdd extends Component {
                 modal: !this.state.modal,
                 title: null,
                 description: null,
-                image: null
+                image: null,
+                boughtPrice: null
             })
-            this.props.addCollectable("collectables", collectable)
+            this.props.addCollectable("collectables", this.props.collection.id)
         }
     }
 
@@ -85,9 +98,21 @@ class CollectableAdd extends Component {
                                 name="text"
                                 onChange={this.handleFieldChange}
                                 placeholder="Description" />
-                            <Label for="image">Upload an image</Label>
+                            <Label for="boughtPrice">If you would like to keep track of how much this collectable was purchased/sold for, input the purchased price here:</Label>
+                            <Input id="boughtPrice"
+                                className="form-control mb-2"
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                placeholder="$0.00" />
+                            {/* <Label for="image">Upload an image</Label>
                             <input type="file" onChange={this.handleChange} />
-                            <img className="user-input-img" src={this.state.file} alt={this.state.title}/>
+                            <img className="user-input-img" src={this.state.file} alt={this.state.title}/> */}
+                            <Dropzone
+                                multiple={false}
+                                accept="image/*"
+                                onDrop={this.onImageDrop.bind(this)}>
+                                <p>Drop an image or click to select a file to upload.</p>
+                            </Dropzone>
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>

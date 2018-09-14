@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class CollectableCard extends Component {
     render() {
+        // const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
+
+        // need to make it return only the collectables that share the collectionId of the current 'match.params'
         return (
             <div className="collectable-card">
                 <Card>

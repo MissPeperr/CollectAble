@@ -35,18 +35,16 @@ export default class Login extends Component {
             DataManager.getAll("users").then((users) => {
                 let loginUser = users.find(user => user.username === this.state.username && user.email === this.state.email)
                 if(loginUser){
-                    console.log("hello")
                     localStorage.setItem("user", JSON.stringify(loginUser))
-                    this.props.history.push("/homepage/collectionlist")
+                    this.props.history.push("/collectionlist")
                 }
             })
         } else {
             DataManager.getAll("users").then((users) => {
                 let loginUser = users.find(user => user.username === this.state.username && user.email === this.state.email)
                 if(loginUser){
-                    console.log("hello")
                     sessionStorage.setItem("user", JSON.stringify(loginUser))
-                    this.props.history.push("/homepage/collectionlist")
+                    this.props.history.push("/collectionlist")
                 }
             })
 

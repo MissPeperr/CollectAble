@@ -19,6 +19,12 @@ export default Object.create(null, {
             .then(res => res.json())
         }
     },
+    getCollectables: {
+        value: (resource, collectionId) => {
+            return fetch(`${remoteURL}/${resource}?collectionId=1`)
+            .then(res => res.json())
+        }
+    },
     getUser: {
         value: (username) => {
             return fetch(`${remoteURL}/users?username=${username}`)
@@ -60,6 +66,18 @@ export default Object.create(null, {
                 body: JSON.stringify(object)
             })
             .then(result => result.json())
+        }
+    },
+    postImage: {
+        value: (image) => {
+            return fetch("https://api.cloudinary.com/v1_1/midstone-collectable/image/upload", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(image)
+            })
+            .then(res => res.json())
         }
     }
 })
