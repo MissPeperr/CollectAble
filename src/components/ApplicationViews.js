@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from "react-router-dom";
+import NavBar from './navbar/navbar'
 import HomePage from './homepage/homepageDOM'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,7 +16,11 @@ export default class ApplicationViews extends Component {
                 {
                     this.props.isAuthenticated() &&
                     <div className="viewArea">
-                        <Route exact path="/homepage" render={(props) => {
+                        <NavBar />
+                        {/* <Route path="/homepage/collectionlist" render={(props) => {
+                                return <HomePage {...props} />
+                            }} /> */}
+                            <Route path="/" render={(props) => {
                                 return <HomePage {...props} />
                             }} />
                     </div>

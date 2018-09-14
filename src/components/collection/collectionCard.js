@@ -6,13 +6,13 @@ const CollectionCard = ({ currentCollection }) => {
     // DON'T FORGET TO ADD A TRASH CAN FOR DELETE IN TOP RIGHT CORNER
     // const collectionPageName = currentCollection.title.split(" ").join("")
     // console.log(match)
-    // onClick={()=>{this.props.history.push(`/collection/DisneyPins`)}}
     return (
         <div className="collection-card">
-            <Card >
-                <Button color="info" >
+            <Card>
+                {/* <Button color="info" onClick={()=>{this.props.history.push(`/homepage/collection/${currentCollection.id}`)}} */}
+
                         <CardBody >
-                            <Link to={`/homepage/collection/${currentCollection.id}`} className="collectable-list-link">
+                            <Link to={`/collection/${currentCollection.id}`} className="collectable-list-link">
                                 <CardTitle className="collection-title">
                                     {currentCollection.title}
                                 </CardTitle>
@@ -20,7 +20,7 @@ const CollectionCard = ({ currentCollection }) => {
                                 </CardSubtitle>
                             </Link>
                         </CardBody>
-                    </Button>
+                    {/* </Button> */}
             </Card>
 
         </div>

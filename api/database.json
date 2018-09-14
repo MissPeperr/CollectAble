@@ -42,7 +42,7 @@
       "groupId": 1,
       "title": "Mickey Mouse",
       "description": "He's cute!",
-      "image": "",
+      "image": "adventureland-mickey.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": "",
       "isSold": false

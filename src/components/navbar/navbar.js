@@ -30,7 +30,7 @@ export default class NavBar extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/homepage">CollectAble</NavbarBrand>
+          <NavbarBrand href="/collectionlist">CollectAble</NavbarBrand>
           <img id="logo" alt="Collectable Logo" src={Logo} />
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

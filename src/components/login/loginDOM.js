@@ -37,7 +37,7 @@ export default class Login extends Component {
                 if(loginUser){
                     console.log("hello")
                     localStorage.setItem("user", JSON.stringify(loginUser))
-                    this.props.history.push("/homepage")
+                    this.props.history.push("/homepage/collectionlist")
                 }
             })
         } else {
@@ -46,7 +46,7 @@ export default class Login extends Component {
                 if(loginUser){
                     console.log("hello")
                     sessionStorage.setItem("user", JSON.stringify(loginUser))
-                    this.props.history.push("/homepage")
+                    this.props.history.push("/homepage/collectionlist")
                 }
             })
 

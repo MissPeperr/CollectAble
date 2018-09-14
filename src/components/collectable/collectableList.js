@@ -4,7 +4,6 @@ import CollectableCard from './collectableCard';
 import CollectableAdd from './collectableAdd'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './collectable.css'
-
 export default class CollectablePage extends Component {
     constructor(props) {
         super(props);
