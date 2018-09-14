@@ -17,14 +17,22 @@
       "description": "All of my Disney TsumTsums!"
     },
     {
+      "userId": 1,
       "title": "Disney Pins",
       "description": "Pins from the Disney Parks",
       "id": 2
     },
     {
-      "title": "Knives",
-      "description": "Russ's stuff",
+      "userId": 2,
+      "title": "Stamps",
+      "description": "All of the Stamps",
       "id": 3
+    },
+    {
+      "title": "Books",
+      "description": "All the books",
+      "userId": 1,
+      "id": 4
     }
   ],
   "collectables": [
@@ -34,7 +42,7 @@
       "groupId": 1,
       "title": "Mickey Mouse",
       "description": "He's cute!",
-      "image": "",
+      "image": "adventureland-mickey.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": "",
       "isSold": false

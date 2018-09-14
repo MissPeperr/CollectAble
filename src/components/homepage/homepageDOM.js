@@ -1,43 +1,65 @@
 import React, { Component } from 'react';
-import DataManager from '../modules/DataManager'
-import CollectionList from '../collection/collectionList'
-
+import { Route, Switch } from 'react-router-dom';
+import DataManager from '../modules/DataManager';
+// import Register from '../login/registerDOM';
+import CollectionList from '../collection/collectionList';
+import CollectablePage from '../collectable/collectableList';
 
 class HomePage extends Component {
     state = {
-        users: [],
+        user: {},
         collections: [],
         collectables: [],
         groups: []
     }
 
-    // gonna have to write an if/else for local/session storage
-    componentDidMount(){
+    // gonna have to write something for local/session storage
+    componentDidMount() {
         let newState = {};
-        let localUser = JSON.parse(localStorage.getItem("credentials"));
+        let localUser = JSON.parse(localStorage.getItem("user"));
         newState.user = localUser;
-        DataManager.getAll("collections")
-        .then((collections) => {newState.collections = collections})
-        .then(() => {
-            this.setState(newState)
-        });
+        DataManager.getUserData("collections", localUser.id)
+            .then((collections) => { newState.collections = collections })
+            .then(() => DataManager.getUserData("collectables", localUser.id))
+            .then((collectables) => { newState.collectables = collectables })
+            .then(() => DataManager.getAll("users"))
+            .then(users => { newState.allUsers = users })
+            .then(() => {
+                this.setState(newState)
+            });
+        console.log("mounted", newState.user)
     }
 
     addCollection = (string, collection) => {
         DataManager.add(string, collection)
-        .then(() => DataManager.getAll("collections"))
-        .then(collections => 
-            this.setState({
-                collections: collections
-        }))
+            .then(() => DataManager.getUserData("collections", this.state.user.id))
+            .then(collections =>
+                this.setState({
+                    collections: collections
+                }))
     }
 
     render() {
+        console.log("render homepage")
+
         return (
-            <div>
-                <h5>CollectAble</h5>
-                <CollectionList collections={this.state.collections} addCollection={this.addCollection}/>
-            </div>
+                <React.Fragment>
+                        <Route exact path="/collectionlist" render={(props) => {
+                            return <CollectionList {...props}
+                                user={this.state.user}
+                                collections={this.state.collections}
+                                addCollection={this.addCollection}
+                                collectables={this.state.collectables} />
+                        }} />
+                        <Route exact path="/collection/:collectionId(\d+)" render={(props) => {
+                            return <CollectablePage {...props}
+                                collectables={this.state.collectables}
+                                collections={this.state.collections} />
+                        }} />
+                        {/* <Route exact path="/login/register" render={(props) => {
+                        return <Register {...props} />
+                    }} /> */}
+                </React.Fragment>
         )
     }
 }

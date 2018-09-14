@@ -9,42 +9,49 @@ class CollectionList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          modal: false
+            modal: false
         };
-    
+
         this.toggle = this.toggle.bind(this);
-      }
-    
-      toggle = () => {
+    }
+
+    toggle = () => {
         this.setState({
-          modal: !this.state.modal
+            modal: !this.state.modal
         });
-      }
+    }
 
 
-    render(){
+    render() {
         return (
             <div className="collection-list-container">
-                <h3>Collection List</h3>
-                    <Row>
-                        <Col sm="6">
-                            <Card className="add-collection-card">
+                <Row>
+                    <Col sm="6">
+                        <Card className="add-collection-card">
                             <Button className="add-collection-btn" onClick={this.toggle}>
                                 <CardTitle>+</CardTitle>
                                 <CardText>Create a new Collection</CardText>
-                                <CollectionAdd modal={this.state.modal} toggle={this.toggle} addCollection={this.props.addCollection} {...this.props}/>
+                                <CollectionAdd
+                                    modal={this.state.modal}
+                                    toggle={this.toggle}
+                                    user={this.props.user}
+                                    addCollection={this.props.addCollection} {...this.props} />
                             </Button>
-                            </Card>
-                        </Col>
-                    </Row>
-                    <section className="collection-card-container">
+                        </Card>
+                    </Col>
+                </Row>
+                <section className="collection-card-container">
                     {
                         this.props.collections.map(collection =>
-                            <CollectionCard key={collection.id} currentCollection={collection} {...this.props}/>
+                            <CollectionCard
+                                key={collection.id}
+                                currentCollection={collection}
+                                collections={this.props.collections}
+                                collectables={this.props.collectables} {...this.props} />
                         )
-                        
+
                     }
-                    </section>
+                </section>
 
             </div>
         )

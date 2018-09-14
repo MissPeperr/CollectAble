@@ -1,0 +1,14 @@
+@import 'components/shared.scss';
+
+.add-collectable-card {
+    margin: 2rem 2rem 2rem 2rem;
+
+    .add-collectable-btn {
+        @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px);
+        
+    }
+}
+
+.user-input-image {
+    width: 50%;
+}
