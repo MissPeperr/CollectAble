@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap'
 import './navbar.css'
 import Logo from '../images/CollectAble-Logo.png'
 import {
@@ -25,6 +26,18 @@ export default class NavBar extends Component {
     });
   }
 
+  handleLogout = () => {
+    if(localStorage.getItem("user")){
+      localStorage.removeItem("user");
+      window.location.reload();
+    } else if (sessionStorage.getItem("user")){
+      sessionStorage.removeItem("user");
+      window.location.reload();
+    } else {
+      alert("There was a problem logging out.")
+    }
+  }
+
   // add log out functionality to navlink
   render() {
     return (
@@ -39,9 +52,9 @@ export default class NavBar extends Component {
                 <NavLink href="/settings/">Settings</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/login">Log Out</NavLink>
+                <Button onClick={this.handleLogout}>Log Out</Button>
               </NavItem>
-            </Nav>
+          </Nav>
           </Collapse>
         </Navbar>
       </div>

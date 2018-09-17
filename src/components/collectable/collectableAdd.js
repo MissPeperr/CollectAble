@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import DataManager from '../modules/DataManager';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Alert } from 'reactstrap';
+
+const uploadPreset = 'collectable';
+const uploadURL = 'https://api.cloudinary.com/v1_1/midstone-collectable/image/upload';
 
 class CollectableAdd extends Component {
     constructor(props) {
@@ -10,30 +16,70 @@ class CollectableAdd extends Component {
             file: null,
             title: null,
             description: null,
-            image: null,
+            imageURL: null,
             boughtPrice: null,
             soldPrice: null,
+            collectionId: this.props.collection,
             isSold: false
         };
         this.onDismiss = this.onDismiss.bind(this);
         this.handleChange = this.handleChange.bind(this)
-
     }
-    //changes state whenever an input field has changed
+
+    // this is the functionality for react-dropzone to upload images
+    onImageDrop(files) {
+        this.setState({
+            uploadedFile: files[0]
+        });
+        this.handleImageUpload(files[0]);
+    }
+
+    // changes state whenever an input field has changed
     handleFieldChange = evt => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
 
+    // setting the state to the file the user uploaded
     handleChange(event) {
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
         })
     }
 
+    // reactstrap alert functionality
     onDismiss() {
         this.setState({ visible: false });
+    }
+
+    // this uploads the image to cloudinary, and sends a URL to the image back in its place
+    handleImageUpload(file) {
+        let upload = request.post(uploadURL)
+            .field('upload_preset', uploadPreset)
+            .field('file', file);
+
+        upload.end((err, response) => {
+            if (err) {
+                console.error(err);
+            }
+
+            if (response.body.secure_url !== '') {
+                this.setState({
+                    imageURL: response.body.secure_url
+                });
+            }
+        });
+    }
+
+    addCollectable = (string, collectable) => {
+        DataManager.add(string, collectable)
+            .then(() => DataManager.getCollectables("collectables", this.props.collection))
+            .then(collectables => {
+                this.setState({
+                    collectables: collectables
+                })
+            })
     }
 
     createNewCollectable = evt => {
@@ -41,8 +87,11 @@ class CollectableAdd extends Component {
         const collectable = {
             title: this.state.title,
             description: this.state.description,
-            image: this.state.image,
-            userId: this.props.user.id
+            imageURL: this.state.imageURL,
+            boughtPrice: this.state.boughtPrice,
+            soldPrice: null,
+            isSold: false,
+            collectionId: this.props.collection
         }
         if (collectable.title === null) {
             this.setState({
@@ -53,9 +102,11 @@ class CollectableAdd extends Component {
                 modal: !this.state.modal,
                 title: null,
                 description: null,
-                image: null
+                imageURL: null,
+                boughtPrice: null
             })
-            this.props.addCollectable("collectables", collectable)
+            this.props.toggle();
+            this.addCollectable("collectables", collectable)
         }
     }
 
@@ -85,9 +136,31 @@ class CollectableAdd extends Component {
                                 name="text"
                                 onChange={this.handleFieldChange}
                                 placeholder="Description" />
-                            <Label for="image">Upload an image</Label>
-                            <input type="file" onChange={this.handleChange} />
-                            <img className="user-input-img" src={this.state.file} alt={this.state.title}/>
+                            <Label for="boughtPrice">If you would like to keep track of how much this collectable was purchased/sold for, input the purchased price here:</Label>
+                            <Input id="boughtPrice"
+                                className="form-control mb-2"
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                placeholder="$0.00" />
+                            <Dropzone
+                                multiple={false}
+                                accept="image/*"
+                                onDrop={this.onImageDrop.bind(this)}>
+                                <p>Drop an image or click to select a file to upload.</p>
+                            </Dropzone>
+                            <div>
+                                <div className="FileUpload" style={{width: "auto"}}>
+                                    ...
+                            </div>
+
+                                <div>
+                                    {this.state.uploadURL === '' ? null :
+                                        <div>
+                                            <p>{this.state.title}</p>
+                                            <img className="preview-img" alt={this.state.title}style={{width: "auto"}} src={this.state.uploadURL} />
+                                        </div>}
+                                </div>
+                            </div>
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>

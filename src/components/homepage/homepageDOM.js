@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import DataManager from '../modules/DataManager';
-// import Register from '../login/registerDOM';
+import Register from '../login/registerDOM';
 import CollectionList from '../collection/collectionList';
 import CollectablePage from '../collectable/collectableList';
 
@@ -16,18 +16,43 @@ class HomePage extends Component {
     // gonna have to write something for local/session storage
     componentDidMount() {
         let newState = {};
-        let localUser = JSON.parse(localStorage.getItem("user"));
-        newState.user = localUser;
-        DataManager.getUserData("collections", localUser.id)
-            .then((collections) => { newState.collections = collections })
-            .then(() => DataManager.getUserData("collectables", localUser.id))
+        if (localStorage.getItem("user")) {
+            let localUser = JSON.parse(localStorage.getItem("user"));
+            newState.user = localUser;
+            DataManager.getUserData("collections", localUser.id)
+                .then((collections) => { newState.collections = collections })
+                // .then(() => DataManager.getAll("collectables"))
+                // .then((collectables) => { newState.collectables = collectables })
+                .then(() => DataManager.getAll("users"))
+                .then(users => { newState.allUsers = users })
+                .then(() => {
+                    this.setState(newState)
+                });
+        } else if(sessionStorage.getItem("user")){
+            let sessionUser = JSON.parse(sessionStorage.getItem("user"));
+            newState.user = sessionUser;
+            DataManager.getUserData("collections", sessionUser.id)
+                .then((collections) => { newState.collections = collections })
+                // .then(() => DataManager.getAll("collectables"))
+                // .then((collectables) => { newState.collectables = collectables })
+                .then(() => DataManager.getAll("users"))
+                .then(users => { newState.allUsers = users })
+                .then(() => {
+                    this.setState(newState)
+                });
+        } else {
+            alert("There was an issue with getting the user");
+        }
+        console.log("mounted", newState.user)
+    }
+
+    getCollectables = (string, collectionId) => {
+        let newState = {};
+        DataManager.getCollectables(string, collectionId)
             .then((collectables) => { newState.collectables = collectables })
-            .then(() => DataManager.getAll("users"))
-            .then(users => { newState.allUsers = users })
             .then(() => {
                 this.setState(newState)
-            });
-        console.log("mounted", newState.user)
+            })
     }
 
     addCollection = (string, collection) => {
@@ -38,28 +63,55 @@ class HomePage extends Component {
                     collections: collections
                 }))
     }
+    editCollection = (string, id, collection) => {
+        DataManager.edit(string, id, collection)
+        .then(() => DataManager.getUserData("collections", this.state.user.id))
+        .then((collections) => {
+            this.setState({
+                collections: collections
+            })
+        })
+    }
+
+    // the getCollectables function needs to get the CURRENT collection id
+    // right now it's just going to the state and grabbing all of them
+    addCollectable = (string, collectable) => {
+        DataManager.add(string, collectable)
+            .then(() => this.props.getCollectables("collectables", this.props.collection))
+            .then(collectables => {
+                this.setState({
+                    collectables: collectables
+                })
+            })
+    }
+
 
     render() {
         console.log("render homepage")
 
         return (
-                <React.Fragment>
-                        <Route exact path="/collectionlist" render={(props) => {
-                            return <CollectionList {...props}
-                                user={this.state.user}
-                                collections={this.state.collections}
-                                addCollection={this.addCollection}
-                                collectables={this.state.collectables} />
-                        }} />
-                        <Route exact path="/collection/:collectionId(\d+)" render={(props) => {
-                            return <CollectablePage {...props}
-                                collectables={this.state.collectables}
-                                collections={this.state.collections} />
-                        }} />
-                        {/* <Route exact path="/login/register" render={(props) => {
-                        return <Register {...props} />
-                    }} /> */}
-                </React.Fragment>
+            <React.Fragment>
+                <Route exact path="/collectionlist" render={(props) => {
+                    return <CollectionList {...props}
+                        user={this.state.user}
+                        collections={this.state.collections}
+                        collectables={this.state.collectables}
+                        editCollection={this.editCollection}
+                        addCollection={this.addCollection}
+                        getCollectables={this.getCollectables}
+                    />
+                }} />
+                <Route exact path="/collection/:collectionId(\d+)" render={(props) => {
+                    return <CollectablePage {...props}
+                        collectables={this.state.collectables}
+                        collections={this.state.collections}
+                        addCollectable={this.addCollectable}
+                        getCollectables={this.getCollectables} />
+                }} />
+                <Route exact path="/register" render={(props) => {
+                    return <Register {...props} />
+                }} />
+            </React.Fragment>
         )
     }
 }

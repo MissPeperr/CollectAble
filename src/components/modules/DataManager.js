@@ -19,6 +19,12 @@ export default Object.create(null, {
             .then(res => res.json())
         }
     },
+    getCollectables: {
+        value: (resource, collectionId) => {
+            return fetch(`${remoteURL}/${resource}?collectionId=${collectionId}`)
+            .then(res => res.json())
+        }
+    },
     getUser: {
         value: (username) => {
             return fetch(`${remoteURL}/users?username=${username}`)

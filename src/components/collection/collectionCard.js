@@ -1,31 +1,56 @@
-import React from 'react'
-import { Card, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import React, { Component } from 'react';
+import { Card, CardBody, CardTitle, CardSubtitle, CardHeader, CardFooter, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import CollectionEdit from './collectionEdit';
 
-const CollectionCard = ({ currentCollection }) => {
+class CollectionCard extends Component {
     // DON'T FORGET TO ADD A TRASH CAN FOR DELETE IN TOP RIGHT CORNER
-    // const collectionPageName = currentCollection.title.split(" ").join("")
-    // console.log(match)
-    return (
-        <div className="collection-card">
-            <Card>
-                {/* <Button color="info" onClick={()=>{this.props.history.push(`/homepage/collection/${currentCollection.id}`)}} */}
+    constructor(props) {
+        super(props);
+        this.state = {
+            modal: false
+        };
 
-                        <CardBody >
-                            <Link to={`/collection/${currentCollection.id}`} className="collectable-list-link">
-                                <CardTitle className="collection-title">
-                                    {currentCollection.title}
-                                </CardTitle>
-                                <CardSubtitle className="collection-description">{currentCollection.description}
-                                </CardSubtitle>
-                            </Link>
-                        </CardBody>
-                    {/* </Button> */}
-            </Card>
+        this.toggle = this.toggle.bind(this);
 
-        </div>
-    )
+    }
 
+    toggle = () => {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+
+    render() {
+        return (
+            <div className="collection-card">
+                <Card>
+                    <CardBody>
+                        <Link to={`/collection/${this.props.currentCollection.id}`}
+                            className="collectable-list-link">
+                            <CardTitle className="collection-title">
+                                {this.props.currentCollection.title}
+                            </CardTitle>
+                        </Link>
+                        <CardSubtitle className="collection-description">{this.props.currentCollection.description}
+                        </CardSubtitle>
+                    </CardBody>
+                    <CardFooter>
+                        <Button onClick={this.toggle}>Edit</Button>
+                        <div>
+                            <CollectionEdit key={this.props.currentCollection.id}
+                                toggle={this.toggle}
+                                modal={this.state.modal}
+                                currentCollection={this.props.currentCollection.id}
+                                {...this.props} />
+                        </div>
+                    </CardFooter>
+                </Card>
+
+            </div>
+        )
+
+    }
 }
 
 export default CollectionCard

@@ -23,14 +23,14 @@ export default class Register extends Component {
 
 
     handleRegister = () => {
-        if (!this.state.registerUsername && !this.state.registerEmail) {
+        if (!this.state.registerEmail) {
             document.querySelector("#email").value = "";
-            document.querySelector("#username").value = "";
+            document.querySelector("#password").value = "";
             this.setState({ email: "", password: "" })
-        } else if (this.state.registerUsername && this.state.registerEmail) {
+        } else if (this.state.registerEmail) {
             DataManager.getAll("users").then((users) => {
-                let loginUser = users.find(user => user.username === this.state.registerUsername && user.email === this.state.registerEmail)
-                console.log(loginUser)
+                let loginUser = users.find(user => user.email === this.state.registerEmail)
+                console.log("register", loginUser)
                 if (loginUser) {
                     return(
                         <Alert color="danger">This email has already been registered</Alert>
@@ -38,7 +38,10 @@ export default class Register extends Component {
                 } else {
                     let newUser = {
                         password: this.state.registerPassword,
-                        email: this.state.registerEmail
+                        email: this.state.registerEmail,
+                        DOB: "",
+                        firstName: "",
+                        lastName: ""
                     }
                     DataManager.add("users", newUser)
                         .then(() => alert("You've successfully registered."))
@@ -50,23 +53,28 @@ export default class Register extends Component {
     render() {
         return (
             <React.Fragment>
-            <form onSubmit={this.handleRegister} id="register-form">
+            <form id="register-form">
                 <h1 className="h3 mb-3 font-weight-normal">CollectAble</h1>
                 <label htmlFor="inputEmail">
                     Email:
             </label>
-                <input onChange={this.handleFieldChange} type="email"
+                <input onChange={this.handleFieldChange} 
+                    defaultValue={this.state.registerEmail}
+                    type="email"
                     id="email"
                     placeholder="Email address"
-                    required="" autoFocus="" />
+                    required="" 
+                    autoFocus="" />
                 <label htmlFor="inputPassword">
                     Password:
             </label>
-                <input onChange={this.handleFieldChange} type="password"
+                <input onChange={this.handleFieldChange} 
+                    defaultValue={this.state.registerEmail}
+                    type="password"
                     id="password"
                     placeholder="Password"
                     required="" />
-                <button type="submit">
+                <button type="submit" onClick={this.handleRegister}>
                     Register
                 </button>
             </form>
