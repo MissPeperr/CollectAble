@@ -45,26 +45,27 @@ class CollectionEdit extends Component {
 
   render() {
     return (
-      <div>
         <Modal isOpen={this.props.modal} toggle={this.props.toggle} className="add-collection-modal">
-          <ModalHeader toggle={this.props.toggle}>Create A New Collection!</ModalHeader>
+          <ModalHeader toggle={this.props.toggle}>Edit Collection</ModalHeader>
           <ModalBody>
             {
               this.state.visible &&
               <Alert color="danger" onClick={this.onDismiss}>
-                You don't have a name for your Collection!
+                You don't have a name for your Collection! If you'd like to delete this collection, please click on the trashcan icon on the previous page.
               </Alert>
             }
             <FormGroup>
               <Label>Name of your Collection:</Label>
               <Input id="title"
                 className="form-control mb-2"
+                defaultValue={this.props.currentCollection.title}
                 type="text"
                 onChange={this.handleFieldChange}
                 placeholder="Title" />
               <Label for="description">A short description about your Collection:</Label>
               <Input id="description"
                 className="form-control mb-2"
+                defaultValue={this.props.currentCollection.description}
                 type="textarea"
                 name="text"
                 onChange={this.handleFieldChange}
@@ -72,10 +73,10 @@ class CollectionEdit extends Component {
             </FormGroup>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.editCollection}>Create</Button>{' '}
+            <Button color="primary" onClick={this.editCollection}>Save Changes</Button>{' '}
+            <Button color="dark" onClick={this.props.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
-      </div>
     );
   }
 }

@@ -36,12 +36,14 @@ class CollectionCard extends Component {
                         </CardSubtitle>
                     </CardBody>
                     <CardFooter>
-                        <Button>Edit <CollectionEdit key={this.props.currentCollection.id}
+                        <Button onClick={this.toggle}>Edit</Button>
+                        <div>
+                            <CollectionEdit key={this.props.currentCollection.id}
                                 toggle={this.toggle}
+                                modal={this.state.modal}
                                 currentCollection={this.props.currentCollection}
-                                collections={this.props.collections}
-                                collectables={this.props.collectables}
-                                {...this.props}/></Button>
+                                {...this.props} />
+                        </div>
                     </CardFooter>
                 </Card>
 
