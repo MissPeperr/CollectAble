@@ -63,6 +63,15 @@ class HomePage extends Component {
                     collections: collections
                 }))
     }
+    editCollection = (string, id, collection) => {
+        DataManager.edit(string, id, collection)
+        .then(() => DataManager.getUserData("collections", this.state.user.id))
+        .then((collections) => {
+            this.setState({
+                collections: collections
+            })
+        })
+    }
 
     // the getCollectables function needs to get the CURRENT collection id
     // right now it's just going to the state and grabbing all of them

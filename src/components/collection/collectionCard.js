@@ -41,7 +41,7 @@ class CollectionCard extends Component {
                             <CollectionEdit key={this.props.currentCollection.id}
                                 toggle={this.toggle}
                                 modal={this.state.modal}
-                                currentCollection={this.props.currentCollection}
+                                currentCollection={this.props.currentCollection.id}
                                 {...this.props} />
                         </div>
                     </CardFooter>

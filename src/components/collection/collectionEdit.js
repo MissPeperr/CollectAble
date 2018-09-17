@@ -6,8 +6,8 @@ class CollectionEdit extends Component {
     super(props);
     this.state = {
       visible: false,
-      title: null,
-      description: null
+      title: this.props.currentCollection.title,
+      description: this.props.currentCollection.description
     };
     this.onDismiss = this.onDismiss.bind(this);
 
@@ -36,10 +36,11 @@ class CollectionEdit extends Component {
     } else {
       this.props.toggle()
       this.setState({
-        title: null,
-        description: null,
+        title: this.props.currentCollection.title,
+        description: this.props.currentCollection.description,
       })
-      this.props.editCollection("collections", collection)
+      console.log("currentCollection", this.props.currentCollection.id);
+      this.props.editCollection("collections", this.props.currentCollection.id, collection)
     }
   }
 
