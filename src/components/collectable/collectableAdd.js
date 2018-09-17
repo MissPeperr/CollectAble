@@ -157,7 +157,7 @@ class CollectableAdd extends Component {
                                     {this.state.uploadURL === '' ? null :
                                         <div>
                                             <p>{this.state.title}</p>
-                                            <img className="preview-img" style={{width: "auto"}} src={this.state.uploadURL} />
+                                            <img className="preview-img" alt={this.state.title}style={{width: "auto"}} src={this.state.uploadURL} />
                                         </div>}
                                 </div>
                             </div>
