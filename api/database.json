@@ -183,6 +183,16 @@
       "isSold": false,
       "collectionId": 2,
       "id": 15
+    },
+    {
+      "title": "test",
+      "description": "test",
+      "imageURL": null,
+      "boughtPrice": null,
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 1,
+      "id": 16
     }
   ],
   "groups": [

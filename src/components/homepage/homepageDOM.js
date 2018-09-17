@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import DataManager from '../modules/DataManager';
 import Register from '../login/registerDOM';
 import CollectionList from '../collection/collectionList';
@@ -87,6 +87,7 @@ class HomePage extends Component {
                         user={this.state.user}
                         collections={this.state.collections}
                         collectables={this.state.collectables}
+                        editCollection={this.editCollection}
                         addCollection={this.addCollection}
                         getCollectables={this.getCollectables}
                     />
