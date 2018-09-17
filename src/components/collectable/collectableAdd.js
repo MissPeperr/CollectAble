@@ -24,8 +24,6 @@ class CollectableAdd extends Component {
         };
         this.onDismiss = this.onDismiss.bind(this);
         this.handleChange = this.handleChange.bind(this)
-
-
     }
 
     // this is the functionality for react-dropzone to upload images
@@ -35,22 +33,27 @@ class CollectableAdd extends Component {
         });
         this.handleImageUpload(files[0]);
     }
-    //changes state whenever an input field has changed
+
+    // changes state whenever an input field has changed
     handleFieldChange = evt => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
 
+    // setting the state to the file the user uploaded
     handleChange(event) {
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
         })
     }
 
+    // reactstrap alert functionality
     onDismiss() {
         this.setState({ visible: false });
     }
+
+    // this uploads the image to cloudinary, and sends a URL to the image back in its place
     handleImageUpload(file) {
         let upload = request.post(uploadURL)
             .field('upload_preset', uploadPreset)
@@ -69,11 +72,9 @@ class CollectableAdd extends Component {
         });
     }
 
-    // the getCollectables function needs to get the CURRENT collection id
-    // right now it's just going to the state and grabbing all of them
     addCollectable = (string, collectable) => {
         DataManager.add(string, collectable)
-            .then(() => DataManager.getCollectables("collectables", this.props.collection.id))
+            .then(() => DataManager.getCollectables("collectables", this.props.collection))
             .then(collectables => {
                 this.setState({
                     collectables: collectables
@@ -104,12 +105,12 @@ class CollectableAdd extends Component {
                 imageURL: null,
                 boughtPrice: null
             })
-            this.props.addCollectable("collectables", collectable)
+            this.props.toggle();
+            this.addCollectable("collectables", collectable)
         }
     }
 
     render() {
-        console.log(this.props.collection)
         return (
             <div>
                 <Modal isOpen={this.props.modal} toggle={this.toggle} className="add-collectable-modal">
@@ -148,7 +149,7 @@ class CollectableAdd extends Component {
                                 <p>Drop an image or click to select a file to upload.</p>
                             </Dropzone>
                             <div>
-                                <div className="FileUpload">
+                                <div className="FileUpload" style={{width: "auto"}}>
                                     ...
                             </div>
 
@@ -156,7 +157,7 @@ class CollectableAdd extends Component {
                                     {this.state.uploadURL === '' ? null :
                                         <div>
                                             <p>{this.state.title}</p>
-                                            <img className="preview-img" src={this.state.uploadURL} />
+                                            <img className="preview-img" style={{width: "auto"}} src={this.state.uploadURL} />
                                         </div>}
                                 </div>
                             </div>

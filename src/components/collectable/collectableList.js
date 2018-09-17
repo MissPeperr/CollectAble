@@ -4,11 +4,14 @@ import CollectableCard from './collectableCard';
 import CollectableAdd from './collectableAdd'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './collectable.css'
+
+
 export default class CollectablePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modal: false
+            modal: false,
+            collection: {}
         };
 
         this.toggle = this.toggle.bind(this);
@@ -20,14 +23,24 @@ export default class CollectablePage extends Component {
         });
     }
 
-
-    render() {
-
+    // checkout react-router-dom about using URL param to make sure it's not delaying when loading
+    componentDidMount(){
         const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
-        console.log("collection id:", collection.id)
+        this.setState({
+            collection: {...collection}
+        }, () => {
+            this.props.getCollectables("collectables", collection.id)
+            console.log("collection id:", this.state.collection)
+        })
+    }
+    
+    render(){
+        // need this here so when user refreshes, the information about the collection is still there
+        // const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
+        console.log("collectable list render")
         return (
             <div className="collectable-list-container">
-                <h4>{collection.title}</h4>
+                <h4>{this.state.collection.title}</h4>
                 <Row>
                     <Col sm="6">
                         <Card className="add-collectable-card">
@@ -37,8 +50,9 @@ export default class CollectablePage extends Component {
                                 <CollectableAdd
                                     modal={this.state.modal}
                                     toggle={this.toggle}
-                                    collection={collection.id}
-                                    addCollectable={this.props.addCollectable} {...this.props} />
+                                    collection={this.state.collection.id}
+                                     {...this.props} />
+                                     {/* addCollectable={this.props.addCollectable} */}
                             </Button>
                         </Card>
                     </Col>

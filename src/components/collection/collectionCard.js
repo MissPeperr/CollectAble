@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 
 const CollectionCard = ({ currentCollection }) => {
     // DON'T FORGET TO ADD A TRASH CAN FOR DELETE IN TOP RIGHT CORNER
-    // const collectionPageName = currentCollection.title.split(" ").join("")
-    // console.log(match)
     return (
         <div className="collection-card">
             <Card>
-                {/* <Button color="info" onClick={()=>{this.props.history.push(`/homepage/collection/${currentCollection.id}`)}} */}
+
+                {/* This button won't work with the history.push */}
+                {/* <Button color="info" onClick={()=>{this.props.history.push(`/collection/${currentCollection.id}`)}}> */}
 
                         <CardBody >
-                            <Link to={`/collection/${currentCollection.id}`} className="collectable-list-link">
+                            <Link to={`/collection/${currentCollection.id}`} 
+                                    className="collectable-list-link">
                                 <CardTitle className="collection-title">
                                     {currentCollection.title}
                                 </CardTitle>

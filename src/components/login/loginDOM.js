@@ -80,7 +80,7 @@ export default class Login extends Component {
                 </form>
                 <div>
                     <h6>New to the site?</h6>
-                    <Button color="light"><Link to="/login/register">Register</Link></Button>
+                    <Button color="light"><Link to="/register">Register</Link></Button>
                 </div>
             </React.Fragment>
         )

@@ -51,7 +51,8 @@ class CollectionList extends Component {
                                 key={collection.id}
                                 currentCollection={collection}
                                 collections={this.props.collections}
-                                collectables={this.props.collectables} {...this.props} />
+                                collectables={this.props.collectables}
+                                {...this.props} />
                         )
 
                     }

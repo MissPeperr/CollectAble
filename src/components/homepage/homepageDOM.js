@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import DataManager from '../modules/DataManager';
-// import Register from '../login/registerDOM';
+import Register from '../login/registerDOM';
 import CollectionList from '../collection/collectionList';
 import CollectablePage from '../collectable/collectableList';
 
@@ -20,14 +20,23 @@ class HomePage extends Component {
         newState.user = localUser;
         DataManager.getUserData("collections", localUser.id)
             .then((collections) => { newState.collections = collections })
-            .then(() => DataManager.getCollectables("collectables"))
-            .then((collectables) => { newState.collectables = collectables })
+            // .then(() => DataManager.getAll("collectables"))
+            // .then((collectables) => { newState.collectables = collectables })
             .then(() => DataManager.getAll("users"))
             .then(users => { newState.allUsers = users })
             .then(() => {
                 this.setState(newState)
             });
         console.log("mounted", newState.user)
+    }
+    
+    getCollectables = (string, collectionId) => {
+        let newState = {};
+        DataManager.getCollectables(string, collectionId)
+            .then((collectables) => {newState.collectables = collectables})
+            .then(() => {
+                this.setState(newState)
+            })
     }
 
     addCollection = (string, collection) => {
@@ -37,6 +46,18 @@ class HomePage extends Component {
                 this.setState({
                     collections: collections
                 }))
+    }
+
+    // the getCollectables function needs to get the CURRENT collection id
+    // right now it's just going to the state and grabbing all of them
+    addCollectable = (string, collectable) => {
+        DataManager.add(string, collectable)
+            .then(() => this.props.getCollectables("collectables", this.props.collection))
+            .then(collectables => {
+                this.setState({
+                    collectables: collectables
+                })
+            })
     }
 
 
@@ -51,17 +72,19 @@ class HomePage extends Component {
                                 collections={this.state.collections}
                                 collectables={this.state.collectables} 
                                 addCollection={this.addCollection}
+                                getCollectables={this.getCollectables}
                                 />
                         }} />
                         <Route exact path="/collection/:collectionId(\d+)" render={(props) => {
                             return <CollectablePage {...props}
                                 collectables={this.state.collectables}
                                 collections={this.state.collections}
-                                addCollectable={this.addCollectable} />
+                                addCollectable={this.addCollectable}
+                                getCollectables={this.getCollectables} />
                         }} />
-                        {/* <Route exact path="/login/register" render={(props) => {
+                        <Route exact path="/register" render={(props) => {
                         return <Register {...props} />
-                    }} /> */}
+                    }} />
                 </React.Fragment>
         )
     }
