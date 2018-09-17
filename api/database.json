@@ -7,6 +7,14 @@
       "DOB": "09/11/1995",
       "email": "me@me.com",
       "password": "me"
+    },
+    {
+      "password": "me",
+      "email": "madi@me.com",
+      "DOB": "",
+      "firstName": "",
+      "lastName": "",
+      "id": 2
     }
   ],
   "collections": [
