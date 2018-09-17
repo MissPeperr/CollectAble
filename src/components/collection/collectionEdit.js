@@ -26,21 +26,22 @@ class CollectionEdit extends Component {
   editCollection = () => {
     const collection = {
       title: this.state.title,
-      description: this.state.description,
-      userId: this.props.user.id
+      description: this.state.description
     }
-    if (collection.title === null) {
+    if (collection.title === null && collection.description === null) {
       this.setState({
         visible: true,
       })
     } else {
       this.props.toggle()
-      this.setState({
-        title: this.props.currentCollection.title,
-        description: this.props.currentCollection.description,
-      })
       console.log("currentCollection", this.props.currentCollection.id);
       this.props.editCollection("collections", this.props.currentCollection.id, collection)
+      .then(() => {
+        this.setState({
+            title: this.props.currentCollection.title,
+            description: this.props.currentCollection.description,
+          })
+      })
     }
   }
 
@@ -56,14 +57,12 @@ class CollectionEdit extends Component {
               </Alert>
             }
             <FormGroup>
-              <Label>Name of your Collection:</Label>
               <Input id="title"
                 className="form-control mb-2"
                 defaultValue={this.props.currentCollection.title}
                 type="text"
                 onChange={this.handleFieldChange}
                 placeholder="Title" />
-              <Label for="description">A short description about your Collection:</Label>
               <Input id="description"
                 className="form-control mb-2"
                 defaultValue={this.props.currentCollection.description}
