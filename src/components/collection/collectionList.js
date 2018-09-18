@@ -50,6 +50,7 @@ class CollectionList extends Component {
                             <CollectionCard
                                 key={collection.id}
                                 currentCollection={collection}
+                                getCollections={this.props.getCollections}
                                 editCollection={this.props.editCollection}
                                 collections={this.props.collections}
                                 collectables={this.props.collectables}

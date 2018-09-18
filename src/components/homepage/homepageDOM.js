@@ -13,16 +13,13 @@ class HomePage extends Component {
         groups: []
     }
 
-    // gonna have to write something for local/session storage
-    componentDidMount() {
+    getCollectionsById = () => {
         let newState = {};
         if (localStorage.getItem("user")) {
             let localUser = JSON.parse(localStorage.getItem("user"));
             newState.user = localUser;
             DataManager.getUserData("collections", localUser.id)
                 .then((collections) => { newState.collections = collections })
-                // .then(() => DataManager.getAll("collectables"))
-                // .then((collectables) => { newState.collectables = collectables })
                 .then(() => DataManager.getAll("users"))
                 .then(users => { newState.allUsers = users })
                 .then(() => {
@@ -33,8 +30,6 @@ class HomePage extends Component {
             newState.user = sessionUser;
             DataManager.getUserData("collections", sessionUser.id)
                 .then((collections) => { newState.collections = collections })
-                // .then(() => DataManager.getAll("collectables"))
-                // .then((collectables) => { newState.collectables = collectables })
                 .then(() => DataManager.getAll("users"))
                 .then(users => { newState.allUsers = users })
                 .then(() => {
@@ -43,17 +38,12 @@ class HomePage extends Component {
         } else {
             alert("There was an issue with getting the user");
         }
-        console.log("mounted", newState.user)
     }
 
-    getCollectables = (string, collectionId) => {
-        let newState = {};
-        DataManager.getCollectables(string, collectionId)
-            .then((collectables) => { newState.collectables = collectables })
-            .then(() => {
-                this.setState(newState)
-            })
+    componentDidMount() {
+        this.getCollectionsById();
     }
+
 
     addCollection = (string, collection) => {
         DataManager.add(string, collection)
@@ -73,19 +63,6 @@ class HomePage extends Component {
         })
     }
 
-    // the getCollectables function needs to get the CURRENT collection id
-    // right now it's just going to the state and grabbing all of them
-    addCollectable = (string, collectable) => {
-        DataManager.add(string, collectable)
-            .then(() => this.props.getCollectables("collectables", this.props.collection))
-            .then(collectables => {
-                this.setState({
-                    collectables: collectables
-                })
-            })
-    }
-
-
     render() {
         console.log("render homepage")
 
@@ -96,6 +73,7 @@ class HomePage extends Component {
                         user={this.state.user}
                         collections={this.state.collections}
                         collectables={this.state.collectables}
+                        getCollections={this.getCollectionsById}
                         editCollection={this.editCollection}
                         addCollection={this.addCollection}
                         getCollectables={this.getCollectables}
@@ -106,7 +84,7 @@ class HomePage extends Component {
                         collectables={this.state.collectables}
                         collections={this.state.collections}
                         addCollectable={this.addCollectable}
-                        getCollectables={this.getCollectables} />
+                        />
                 }} />
                 <Route exact path="/register" render={(props) => {
                     return <Register {...props} />

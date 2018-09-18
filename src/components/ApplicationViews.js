@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Redirect } from "react-router-dom";
 import NavBar from './navbar/navbar'
 import HomePage from './homepage/homepageDOM'
-import Register from './login/registerDOM'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

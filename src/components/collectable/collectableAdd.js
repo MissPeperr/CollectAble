@@ -19,7 +19,7 @@ class CollectableAdd extends Component {
             imageURL: null,
             boughtPrice: null,
             soldPrice: null,
-            collectionId: this.props.collection,
+            collectionId: this.props.collectionId,
             isSold: false
         };
         this.onDismiss = this.onDismiss.bind(this);
@@ -72,15 +72,6 @@ class CollectableAdd extends Component {
         });
     }
 
-    addCollectable = (string, collectable) => {
-        DataManager.add(string, collectable)
-            .then(() => DataManager.getCollectables("collectables", this.props.collection))
-            .then(collectables => {
-                this.setState({
-                    collectables: collectables
-                })
-            })
-    }
 
     createNewCollectable = evt => {
         evt.preventDefault()
@@ -91,7 +82,7 @@ class CollectableAdd extends Component {
             boughtPrice: this.state.boughtPrice,
             soldPrice: null,
             isSold: false,
-            collectionId: this.props.collection
+            collectionId: this.props.collectionId
         }
         if (collectable.title === null) {
             this.setState({
@@ -106,7 +97,7 @@ class CollectableAdd extends Component {
                 boughtPrice: null
             })
             this.props.toggle();
-            this.addCollectable("collectables", collectable)
+            this.props.addCollectableFunc("collectables", collectable)
         }
     }
 

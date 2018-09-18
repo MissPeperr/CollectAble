@@ -15,6 +15,14 @@
       "firstName": "",
       "lastName": "",
       "id": 2
+    },
+    {
+      "password": "12345",
+      "email": "fakemail@fakemail.com",
+      "DOB": "",
+      "firstName": "",
+      "lastName": "",
+      "id": 3
     }
   ],
   "collections": [
@@ -185,14 +193,24 @@
       "id": 15
     },
     {
-      "title": "test",
-      "description": "test",
+      "title": "Testing ",
+      "description": "testing the disney pins",
       "imageURL": null,
       "boughtPrice": null,
       "soldPrice": null,
       "isSold": false,
-      "collectionId": 1,
+      "collectionId": 2,
       "id": 16
+    },
+    {
+      "title": "Rockin' Roller Coaster Pin",
+      "description": "The Rockin' Roller Coaster Pin from DisneyWorld",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537282146/ylvbnfbadjkymz2lwrrr.jpg",
+      "boughtPrice": null,
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 2,
+      "id": 17
     }
   ],
   "groups": [
