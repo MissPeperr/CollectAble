@@ -5,3 +5,29 @@
     -moz-box-shadow: $style $size $color;
     box-shadow: $style $size $color;
 }
+
+%card-footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: white !important;
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+%edit-btn {
+    background-color: transparent;
+    border-color: transparent;
+    color: green;
+}
+
+%delete-btn {
+    background-color: transparent;
+    border-color: transparent;
+    color: darkred;
+}
+
+%card-size {
+    min-width: 20rem;
+    max-height: 30rem;
+    max-width: 20rem;
+    max-height: 30rem;
+}

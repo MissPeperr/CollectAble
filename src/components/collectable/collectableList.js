@@ -60,7 +60,7 @@ export default class CollectablePage extends Component {
                 {this.state.isLoaded ?
                     <div>
                         <Row>
-                            <Col sm="6">
+                            <Col xs="6" sm="4">
                                 <Card className="add-collectable-card">
                                     <Button className="add-collectable-btn" onClick={this.toggle}>
                                         <CardTitle>+</CardTitle>

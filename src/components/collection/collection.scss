@@ -1,33 +1,30 @@
 @import 'components/shared.scss';
 
+.collection-list-container {
+    margin: 4rem 4rem 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
 .add-collection-card {
     margin: 2rem 2rem 2rem 2rem;
-
+    font-size: 40px;
+    @extend %card-size;
     .add-collection-btn {
-        @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px);
-        
+        @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px); 
     }
 }
-
-.collection-footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: white !important;
-    padding: 0rem 1rem 1rem 1rem;
-    
-    #edit-collection-btn {
-        background-color: transparent;
-        border-color: transparent;
-        color: green;
-    }
-
-    #delete-collection-btn {
-        background-color: transparent;
-        border-color: transparent;
-        color: darkred;
+.collection-card{
+    @extend %card-size;
+    margin: 2rem 2rem 2rem 2rem;
+    .collection-footer {
+        @extend %card-footer;
+        #edit-collection-btn {
+            @extend %edit-btn;
+        }
+        #delete-collection-btn {
+            @extend %delete-btn;
+        }
     }
 }
-
-// .delete-modal {
-    
-// }

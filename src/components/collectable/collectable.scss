@@ -9,11 +9,29 @@
     }
 }
 
-.user-input-img {
-    max-width: 25% !important;
-    max-height: 25% !important;
-}
 
 .preview-img {
-    max-width: 30%;
+    max-width: 50%;
+}
+
+.collectable-card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .collectable-card{
+        max-width: 25%;
+        .user-input-img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .collectable-footer {
+            @extend %card-footer;
+            #edit-collectable-btn {
+                @extend %edit-btn;
+            }
+            #delete-collectable-btn {
+                @extend %delete-btn;
+            }
+        }
+    }
 }

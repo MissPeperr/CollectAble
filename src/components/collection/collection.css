@@ -1,5 +1,34 @@
+.collection-card .collection-footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: white !important;
+  padding: 0rem 1rem 1rem 1rem; }
+
+.collection-card .collection-footer #edit-collection-btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: green; }
+
+.collection-card .collection-footer #delete-collection-btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: darkred; }
+
+.add-collection-card, .collection-card {
+  min-width: 20rem;
+  max-height: 30rem;
+  max-width: 20rem;
+  max-height: 30rem; }
+
+.collection-list-container {
+  margin: 4rem 4rem 2rem 4rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row; }
+
 .add-collection-card {
-  margin: 2rem 2rem 2rem 2rem; }
+  margin: 2rem 2rem 2rem 2rem;
+  font-size: 40px; }
   .add-collection-card .add-collection-btn {
     background-color: #b3b3b3;
     border-color: #b3b3b3;
@@ -7,16 +36,5 @@
     -moz-box-shadow: inset 0px 0px 17px 5px #949494;
     box-shadow: inset 0px 0px 17px 5px #949494; }
 
-.collection-footer {
-  display: flex;
-  justify-content: space-between;
-  background-color: white !important;
-  padding: 0rem 1rem 1rem 1rem; }
-  .collection-footer #edit-collection-btn {
-    background-color: transparent;
-    border-color: transparent;
-    color: green; }
-  .collection-footer #delete-collection-btn {
-    background-color: transparent;
-    border-color: transparent;
-    color: darkred; }
+.collection-card {
+  margin: 2rem 2rem 2rem 2rem; }
