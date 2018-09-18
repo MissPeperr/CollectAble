@@ -16,7 +16,9 @@
     padding: 0rem 1rem 1rem 1rem;
     
     #edit-collection-btn {
-        
+        background-color: transparent;
+        border-color: transparent;
+        color: green;
     }
 
     #delete-collection-btn {
@@ -25,3 +27,7 @@
         color: darkred;
     }
 }
+
+// .delete-modal {
+    
+// }

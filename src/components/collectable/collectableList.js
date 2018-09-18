@@ -3,11 +3,13 @@ import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import DataManager from '../modules/DataManager';
 import CollectableCard from './collectableCard';
 import CollectableAdd from './collectableAdd'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRedo } from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './collectable.css'
+library.add(faRedo)
 
-const pathArray = window.location.pathname.split("/")
-const collectionId = pathArray[2]
 export default class CollectablePage extends Component {
     constructor(props) {
         super(props);
@@ -17,9 +19,10 @@ export default class CollectablePage extends Component {
             collectables: [],
             isLoaded: false
         };
-
+        
         this.toggle = this.toggle.bind(this);
     }
+    collectionId = parseInt(this.props.match.params.collectionId, 0)
 
     toggle = () => {
         this.setState({
@@ -29,31 +32,28 @@ export default class CollectablePage extends Component {
 
     addCollectable = (string, collectable) => {
         DataManager.add(string, collectable)
-            .then(() => DataManager.getCollectables("collectables", collectionId))
+            .then(() => DataManager.getCollectables("collectables", this.collectionId))
             .then(collectables => {
                 this.setState({
                     collectables: collectables
                 })
             })
-    }
+        }
 
     componentDidMount() {
-        DataManager.getCollectables("collectables", collectionId)
+        DataManager.getCollectables("collectables", this.collectionId)
             .then((collectables) => {
-                console.log(collectables)
                 this.setState({
                     collectables: collectables,
                     isLoaded: true
                 })
             })
-        DataManager.getUserData("collections")
     }
 
 
     render() {
         // need this here so when user refreshes, the information about the collection is still there
         const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
-
         return (
             <div className="collectable-list-container">
                 <h4>{collection.title}</h4>
@@ -68,7 +68,7 @@ export default class CollectablePage extends Component {
                                         <CollectableAdd
                                             modal={this.state.modal}
                                             toggle={this.toggle}
-                                            collectionId={collectionId}
+                                            collectionId={this.collectionId}
                                             addCollectableFunc={this.addCollectable}
                                             {...this.props} />
                                     </Button>
@@ -88,7 +88,7 @@ export default class CollectablePage extends Component {
                         </section>
                     </div>
 
-                    : <p>Loading</p>}
+                    : <FontAwesomeIcon icon="redo" className="fa-spin"/>}
             </div>
         )
     }

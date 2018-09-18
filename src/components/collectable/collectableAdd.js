@@ -19,7 +19,7 @@ class CollectableAdd extends Component {
             imageURL: null,
             boughtPrice: null,
             soldPrice: null,
-            collectionId: this.props.collection,
+            collectionId: this.props.collectionId,
             isSold: false
         };
         this.onDismiss = this.onDismiss.bind(this);

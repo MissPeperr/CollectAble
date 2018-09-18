@@ -13,7 +13,7 @@ class HomePage extends Component {
         groups: []
     }
 
-    componentDidMount() {
+    getCollectionsById = () => {
         let newState = {};
         if (localStorage.getItem("user")) {
             let localUser = JSON.parse(localStorage.getItem("user"));
@@ -30,8 +30,6 @@ class HomePage extends Component {
             newState.user = sessionUser;
             DataManager.getUserData("collections", sessionUser.id)
                 .then((collections) => { newState.collections = collections })
-                // .then(() => DataManager.getAll("collectables"))
-                // .then((collectables) => { newState.collectables = collectables })
                 .then(() => DataManager.getAll("users"))
                 .then(users => { newState.allUsers = users })
                 .then(() => {
@@ -40,6 +38,10 @@ class HomePage extends Component {
         } else {
             alert("There was an issue with getting the user");
         }
+    }
+
+    componentDidMount() {
+        this.getCollectionsById();
     }
 
 
@@ -71,6 +73,7 @@ class HomePage extends Component {
                         user={this.state.user}
                         collections={this.state.collections}
                         collectables={this.state.collectables}
+                        getCollections={this.getCollectionsById}
                         editCollection={this.editCollection}
                         addCollection={this.addCollection}
                         getCollectables={this.getCollectables}
@@ -81,7 +84,6 @@ class HomePage extends Component {
                         collectables={this.state.collectables}
                         collections={this.state.collections}
                         addCollectable={this.addCollectable}
-                        // getCollectables={this.getCollectables} 
                         />
                 }} />
                 <Route exact path="/register" render={(props) => {

@@ -15,6 +15,14 @@
       "firstName": "",
       "lastName": "",
       "id": 2
+    },
+    {
+      "password": "12345",
+      "email": "fakemail@fakemail.com",
+      "DOB": "",
+      "firstName": "",
+      "lastName": "",
+      "id": 3
     }
   ],
   "collections": [
@@ -185,52 +193,24 @@
       "id": 15
     },
     {
-      "title": "test",
-      "description": "test",
-      "imageURL": null,
-      "boughtPrice": null,
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 1,
-      "id": 16
-    },
-    {
-      "title": "test",
-      "description": "test",
+      "title": "Testing ",
+      "description": "testing the disney pins",
       "imageURL": null,
       "boughtPrice": null,
       "soldPrice": null,
       "isSold": false,
       "collectionId": 2,
-      "id": 18
+      "id": 16
     },
     {
-      "title": "hey hey you you",
-      "description": "i don't like ur girlfriend",
-      "imageURL": null,
+      "title": "Rockin' Roller Coaster Pin",
+      "description": "The Rockin' Roller Coaster Pin from DisneyWorld",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537282146/ylvbnfbadjkymz2lwrrr.jpg",
       "boughtPrice": null,
       "soldPrice": null,
       "isSold": false,
-      "id": 19
-    },
-    {
-      "title": "hey",
-      "description": "u suck",
-      "imageURL": null,
-      "boughtPrice": null,
-      "soldPrice": null,
-      "isSold": false,
-      "id": 20
-    },
-    {
-      "title": "test finally",
-      "description": "pls work",
-      "imageURL": null,
-      "boughtPrice": null,
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": "1",
-      "id": 21
+      "collectionId": 2,
+      "id": 17
     }
   ],
   "groups": [
