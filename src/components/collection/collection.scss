@@ -8,3 +8,20 @@
         
     }
 }
+
+.collection-footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: white !important;
+    padding: 0rem 1rem 1rem 1rem;
+    
+    #edit-collection-btn {
+        
+    }
+
+    #delete-collection-btn {
+        background-color: transparent;
+        border-color: transparent;
+        color: darkred;
+    }
+}

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Alert } from 'reactstrap';
 import DataManager from '../modules/DataManager';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -32,11 +31,8 @@ export default class Login extends Component {
         } else if (this.state.registerEmail) {
             DataManager.getAll("users").then((users) => {
                 let loginUser = users.find(user => user.email === this.state.registerEmail)
-                console.log("register", loginUser)
                 if (loginUser) {
-
-                    alert("This email has already been registered")
-
+                    alert("This email has already been registered") 
                 } else {
                     let newUser = {
                         password: this.state.registerPassword,
@@ -76,7 +72,6 @@ export default class Login extends Component {
 
 
     render() {
-        console.log("render login")
         return (
             <React.Fragment>
                 <form onSubmit={this.handleLogin} id="login-form">
