@@ -1,15 +1,45 @@
-.add-collectable-card {
-  margin: 2rem 2rem 2rem 2rem; }
-  .add-collectable-card .add-collectable-btn {
+.collectable-list-container .collectable-card .collectable-footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: white !important;
+  padding: 0rem 1rem 1rem 1rem; }
+
+.collectable-list-container .collectable-card .collectable-footer #edit-collectable-btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: green; }
+
+.collectable-list-container .collectable-card .collectable-footer #delete-collectable-btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: darkred; }
+
+.collectable-list-container {
+  margin: 2rem 4rem 2rem 4rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .collectable-list-container .add-collectable-btn {
     background-color: #b3b3b3;
     border-color: #b3b3b3;
     -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
     -moz-box-shadow: inset 0px 0px 17px 5px #949494;
-    box-shadow: inset 0px 0px 17px 5px #949494; }
-
-.user-input-img {
-  max-width: 25% !important;
-  max-height: 25% !important; }
-
-.preview-img {
-  max-width: 30%; }
+    box-shadow: inset 0px 0px 17px 5px #949494;
+    margin: 8rem 2rem 8rem 2rem; }
+    .collectable-list-container .add-collectable-btn .plus-btn {
+      font-size: 50px; }
+  .collectable-list-container .collectable-card {
+    margin: 4rem 2rem 4rem 2rem;
+    min-width: 15rem;
+    min-height: 20rem;
+    max-width: 15rem;
+    max-height: 20rem; }
+    .collectable-list-container .collectable-card .user-input-img {
+      padding: .50rem .50rem .50rem .50rem;
+      width: 100%;
+      height: 15vw;
+      object-fit: cover; }
+  .collectable-list-container .preview-img {
+    max-width: 50%; }

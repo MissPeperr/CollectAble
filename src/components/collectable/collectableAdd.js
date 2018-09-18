@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DataManager from '../modules/DataManager';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Alert } from 'reactstrap';
@@ -14,6 +13,7 @@ class CollectableAdd extends Component {
             modal: false,
             visible: false,
             file: null,
+            uploadURL: null,
             title: null,
             description: null,
             imageURL: null,
@@ -140,15 +140,15 @@ class CollectableAdd extends Component {
                                 <p>Drop an image or click to select a file to upload.</p>
                             </Dropzone>
                             <div>
-                                <div className="FileUpload" style={{width: "auto"}}>
+                                <div className="FileUpload" style={{width: "100%"}}>
                                     ...
                             </div>
 
                                 <div>
-                                    {this.state.uploadURL === '' ? null :
+                                    {this.state.imageURL === '' ? null :
                                         <div>
                                             <p>{this.state.title}</p>
-                                            <img className="preview-img" alt={this.state.title}style={{width: "auto"}} src={this.state.uploadURL} />
+                                            <img className="preview-img" alt={this.state.title}style={{width: "auto"}} src={this.state.imageURL} />
                                         </div>}
                                 </div>
                             </div>

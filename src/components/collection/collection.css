@@ -1,22 +1,41 @@
-.add-collection-card {
-  margin: 2rem 2rem 2rem 2rem; }
-  .add-collection-card .add-collection-btn {
-    background-color: #b3b3b3;
-    border-color: #b3b3b3;
-    -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
-    -moz-box-shadow: inset 0px 0px 17px 5px #949494;
-    box-shadow: inset 0px 0px 17px 5px #949494; }
-
-.collection-footer {
+.collection-card .collection-footer {
   display: flex;
   justify-content: space-between;
   background-color: white !important;
   padding: 0rem 1rem 1rem 1rem; }
-  .collection-footer #edit-collection-btn {
-    background-color: transparent;
-    border-color: transparent;
-    color: green; }
-  .collection-footer #delete-collection-btn {
-    background-color: transparent;
-    border-color: transparent;
-    color: darkred; }
+
+.collection-card .collection-footer #edit-collection-btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: green; }
+
+.collection-card .collection-footer #delete-collection-btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: darkred; }
+
+.add-collection-btn, .collection-card {
+  min-width: 20rem;
+  max-height: 30rem;
+  max-width: 20rem;
+  max-height: 30rem; }
+
+.collection-list-container {
+  margin: 4rem 4rem 4rem 8rem;
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.add-collection-btn {
+  background-color: #b3b3b3;
+  border-color: #b3b3b3;
+  -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
+  -moz-box-shadow: inset 0px 0px 17px 5px #949494;
+  box-shadow: inset 0px 0px 17px 5px #949494;
+  margin: 2rem 2rem 2rem 2rem; }
+  .add-collection-btn .plus-btn {
+    font-size: 50px; }
+
+.collection-card {
+  margin: 2rem 2rem 2rem 2rem; }

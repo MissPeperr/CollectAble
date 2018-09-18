@@ -1,19 +1,48 @@
 @import 'components/shared.scss';
 
-.add-collectable-card {
-    margin: 2rem 2rem 2rem 2rem;
+    
 
-    .add-collectable-btn {
+
+
+
+.collectable-list-container{
+    margin: 2rem 4rem 2rem 4rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .add-collectable-btn  {
         @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px);
-        
+        margin: 8rem 2rem 8rem 2rem;
+            .plus-btn {
+                font-size: 50px;
+            }
+                            
     }
-}
-
-.user-input-img {
-    max-width: 25% !important;
-    max-height: 25% !important;
-}
-
-.preview-img {
-    max-width: 30%;
+    .collectable-card{
+        margin: 4rem 2rem 4rem 2rem;
+        min-width: 15rem;
+        min-height: 20rem;
+        max-width: 15rem;
+        max-height: 20rem;
+        .user-input-img {
+            padding: .50rem .50rem .50rem .50rem;
+            width: 100%;
+            height: 15vw;
+            object-fit: cover;
+        }
+        .collectable-footer {
+            @extend %card-footer;
+            #edit-collectable-btn {
+                @extend %edit-btn;
+            }
+            #delete-collectable-btn {
+                @extend %delete-btn;
+            }
+        }
+    }
+    .preview-img {
+        max-width: 50%;
+    }
 }
