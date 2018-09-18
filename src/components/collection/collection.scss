@@ -1,20 +1,22 @@
 @import 'components/shared.scss';
 
 .collection-list-container {
-    margin: 4rem 4rem 2rem 4rem;
+    margin: 4rem 4rem 4rem 8rem;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.add-collection-card {
+.add-collection-btn {
+    @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px); 
     margin: 2rem 2rem 2rem 2rem;
-    font-size: 40px;
     @extend %card-size;
-    .add-collection-btn {
-        @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px); 
+    .plus-btn{
+        font-size: 50px;
     }
 }
+
 .collection-card{
     @extend %card-size;
     margin: 2rem 2rem 2rem 2rem;

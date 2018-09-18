@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 import DataManager from '../modules/DataManager';
+import CollectableEdit from './collectableEdit';
 import './collectable.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 library.add(faTrashAlt, faEdit)
@@ -53,6 +54,12 @@ export default class CollectableCard extends Component {
                     </CardBody>
                     <div className="collectable-footer">
                         <Button id="edit-collectable-btn" onClick={this.toggle}><FontAwesomeIcon icon="edit" /></Button>
+                        <CollectableEdit
+                            collectionId={this.collectionId}
+                            currentCollectable={this.props.currentCollectable}
+                            editCollectable={this.props.editCollectable}
+                            toggle={this.toggle}
+                            modal={this.state.modal} />
                         <Button id="delete-collectable-btn" onClick={() => {
                             this.toggleDelete();
                         }}>

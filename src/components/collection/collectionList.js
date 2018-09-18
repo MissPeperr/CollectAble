@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import CollectionCard from './collectionCard'
 import CollectionAdd from './collectionAdd'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './collection.css'
+library.add(faPlus)
+
 
 
 
@@ -31,9 +36,9 @@ class CollectionList extends Component {
             <div className="collection-list-container">
                 {/* <Row> */}
                     {/* <Col sm="6"> */}
-                        <Card className="add-collection-card">
+                        {/* <Card className="add-collection-card"> */}
                             <Button className="add-collection-btn" onClick={this.toggle}>
-                                <CardTitle>+</CardTitle>
+                                <CardTitle className="plus-btn"><FontAwesomeIcon icon="plus" /></CardTitle>
                                 <CardText>Create a new Collection</CardText>
                                 <CollectionAdd
                                     modal={this.state.modal}
@@ -41,7 +46,7 @@ class CollectionList extends Component {
                                     user={this.props.user}
                                     addCollection={this.props.addCollection} {...this.props} />
                             </Button>
-                        </Card>
+                        {/* </Card> */}
                     {/* </Col> */}
                 {/* </Row> */}
                 {/* <section className="collection-card-container"> */}

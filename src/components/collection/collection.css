@@ -14,27 +14,28 @@
   border-color: transparent;
   color: darkred; }
 
-.add-collection-card, .collection-card {
+.add-collection-btn, .collection-card {
   min-width: 20rem;
   max-height: 30rem;
   max-width: 20rem;
   max-height: 30rem; }
 
 .collection-list-container {
-  margin: 4rem 4rem 2rem 4rem;
+  margin: 4rem 4rem 4rem 8rem;
   display: flex;
-  justify-content: center;
-  flex-direction: row; }
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap: wrap; }
 
-.add-collection-card {
-  margin: 2rem 2rem 2rem 2rem;
-  font-size: 40px; }
-  .add-collection-card .add-collection-btn {
-    background-color: #b3b3b3;
-    border-color: #b3b3b3;
-    -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
-    -moz-box-shadow: inset 0px 0px 17px 5px #949494;
-    box-shadow: inset 0px 0px 17px 5px #949494; }
+.add-collection-btn {
+  background-color: #b3b3b3;
+  border-color: #b3b3b3;
+  -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
+  -moz-box-shadow: inset 0px 0px 17px 5px #949494;
+  box-shadow: inset 0px 0px 17px 5px #949494;
+  margin: 2rem 2rem 2rem 2rem; }
+  .add-collection-btn .plus-btn {
+    font-size: 50px; }
 
 .collection-card {
   margin: 2rem 2rem 2rem 2rem; }

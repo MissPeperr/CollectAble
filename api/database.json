@@ -51,7 +51,7 @@
       "id": 4
     },
     {
-      "title": "Test",
+      "title": "Test the test",
       "description": "The collection I test stuff in",
       "userId": 1,
       "id": 5
@@ -229,9 +229,9 @@
       "id": 19
     },
     {
-      "title": "Pay Respects",
-      "description": null,
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537301218/q8l54afcmt78juhbjeec.png",
+      "title": "Press F",
+      "description": "To pay Repects",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537311674/bcqd1okhboahfzimvhvi.png",
       "boughtPrice": null,
       "soldPrice": null,
       "isSold": false,
