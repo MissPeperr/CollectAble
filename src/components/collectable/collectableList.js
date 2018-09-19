@@ -26,7 +26,11 @@ export default class CollectablePage extends Component {
 
     toggle = () => {
         this.setState({
-            modal: !this.state.modal
+            modal: !this.state.modal,
+            title: null,
+            description: null,
+            imageURL: null,
+            boughtPrice: null
         });
     }
 
@@ -50,6 +54,7 @@ export default class CollectablePage extends Component {
         })
     }
 
+
     componentDidMount() {
         DataManager.getCollectables("collectables", this.collectionId)
             .then((collectables) => {
@@ -67,6 +72,7 @@ export default class CollectablePage extends Component {
         return (
             <div>
                 <h4>{collection.title}</h4>
+                <div><Button>See Archived Collectables</Button></div>
                 {this.state.isLoaded ?
                     <div className="collectable-list-container">
                         <Button className="add-collectable-btn" onClick={this.toggle}>

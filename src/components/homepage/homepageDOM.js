@@ -64,8 +64,6 @@ class HomePage extends Component {
     }
 
     render() {
-        console.log("render homepage")
-
         return (
             <React.Fragment>
                 <Route exact path="/collectionlist" render={(props) => {

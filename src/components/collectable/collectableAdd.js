@@ -133,23 +133,25 @@ class CollectableAdd extends Component {
                                 type="text"
                                 onChange={this.handleFieldChange}
                                 placeholder="$0.00" />
-                            <Dropzone
-                                multiple={false}
-                                accept="image/*"
-                                onDrop={this.onImageDrop.bind(this)}>
-                                <p>Drop an image or click to select a file to upload.</p>
-                            </Dropzone>
-                            <div>
-                                <div className="FileUpload" style={{width: "100%"}}>
-                                    ...
-                            </div>
-
+                            <div id="dropzone-div">
+                                <Dropzone
+                                    multiple={false}
+                                    accept="image/*"
+                                    onDrop={this.onImageDrop.bind(this)}>
+                                    <p>Drop an image or click to select a file to upload.</p>
+                                </Dropzone>
                                 <div>
-                                    {this.state.imageURL === '' ? null :
-                                        <div>
-                                            <p>{this.state.title}</p>
-                                            <img className="preview-img" alt={this.state.title}style={{width: "auto"}} src={this.state.imageURL} />
-                                        </div>}
+                                    <div className="FileUpload" style={{ width: "100%" }}>
+                                        ...
+                                    </div>
+
+                                    <div>
+                                        {this.state.imageURL === '' ? null :
+                                            <div>
+                                                <p>{this.state.title}</p>
+                                                <img className="preview-img" alt={this.state.title} style={{ width: "100%" }} src={this.state.imageURL} />
+                                            </div>}
+                                    </div>
                                 </div>
                             </div>
                         </FormGroup>

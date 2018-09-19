@@ -42,7 +42,13 @@
             }
         }
     }
-    .preview-img {
-        max-width: 50%;
-    }
+}
+
+.preview-img {
+    max-width: 50%;
+}
+#dropzone-div{
+    display: flex !important;
+    justify-content: right !important;
+    flex-direction: column !important;
 }

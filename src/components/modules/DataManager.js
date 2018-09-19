@@ -33,7 +33,7 @@ export default Object.create(null, {
     },
     getSortedData: {
         value: (resource, userId, sortBy, order) => {
-            return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=${sortBy}&_order=${order}`)
+            return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=isSold=true`)
                 .then(res => res.json())
         }
     },
