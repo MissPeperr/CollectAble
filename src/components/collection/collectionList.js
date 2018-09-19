@@ -31,12 +31,11 @@ class CollectionList extends Component {
     }
 
 
+
+
     render() {
         return (
             <div className="collection-list-container">
-                {/* <Row> */}
-                    {/* <Col sm="6"> */}
-                        {/* <Card className="add-collection-card"> */}
                             <Button className="add-collection-btn" onClick={this.toggle}>
                                 <CardTitle className="plus-btn"><FontAwesomeIcon icon="plus" /></CardTitle>
                                 <CardText>Create a new Collection</CardText>
@@ -46,10 +45,6 @@ class CollectionList extends Component {
                                     user={this.props.user}
                                     addCollection={this.props.addCollection} {...this.props} />
                             </Button>
-                        {/* </Card> */}
-                    {/* </Col> */}
-                {/* </Row> */}
-                {/* <section className="collection-card-container"> */}
                     {
                         this.props.collections.map(collection =>
                             <CollectionCard

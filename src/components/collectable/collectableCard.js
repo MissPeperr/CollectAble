@@ -37,8 +37,9 @@ export default class CollectableCard extends Component {
     deleteCollectable = (string, id) => {
         this.toggleDelete();
         DataManager.delete(string, id)
-            .then(DataManager.getCollectables("collectables", this.collectionId));
+            .then(this.props.updateState);
     }
+
 
     render() {
         return (
@@ -51,7 +52,10 @@ export default class CollectableCard extends Component {
                         </CardTitle>
                         <CardSubtitle className="collectable-description">{this.props.currentCollectable.description}
                         </CardSubtitle>
+                        <br></br>
+                        <CardSubtitle>{this.props.currentCollectable.boughtPrice}</CardSubtitle>
                     </CardBody>
+                    <hr></hr>
                     <div className="collectable-footer">
                         <Button id="edit-collectable-btn" onClick={this.toggle}><FontAwesomeIcon icon="edit" /></Button>
                         <CollectableEdit
@@ -73,7 +77,7 @@ export default class CollectableCard extends Component {
                         Are you sure you want to delete this Collectable?
                     </ModalBody>
                     <ModalFooter>
-                        <Button onClick={() => { this.deleteCollectable("collectables", this.props.currentCollectable.id) }}>Yes</Button>
+                        <Button onClick={() => { this.deleteCollectable("collectables", this.props.currentCollectable.id)}}>Yes</Button>
                         <Button onClick={this.toggleDelete}>No</Button>
                     </ModalFooter>
                 </Modal>

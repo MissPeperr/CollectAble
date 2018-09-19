@@ -209,34 +209,14 @@
       "id": 17
     },
     {
-      "title": "Test",
-      "description": "test this shit",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537301144/fl0lo4tjj4kulqt8t0zk.jpg",
+      "title": "test",
+      "description": "testing",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537375119/mpuzrjsayit8zrkkyk7q.png",
       "boughtPrice": null,
       "soldPrice": null,
       "isSold": false,
       "collectionId": 5,
       "id": 18
-    },
-    {
-      "title": "Anything",
-      "description": "all the stuff",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537301196/zrclqgyjm9pcfeene6gs.jpg",
-      "boughtPrice": null,
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 5,
-      "id": 19
-    },
-    {
-      "title": "Press F",
-      "description": "To pay Repects",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537311674/bcqd1okhboahfzimvhvi.png",
-      "boughtPrice": null,
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 5,
-      "id": 20
     }
   ],
   "groups": [

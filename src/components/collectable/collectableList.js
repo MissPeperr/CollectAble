@@ -21,6 +21,7 @@ export default class CollectablePage extends Component {
         };
 
         this.toggle = this.toggle.bind(this);
+        this.updateState = this.updateState.bind(this);
     }
     collectionId = parseInt(this.props.match.params.collectionId, 0)
 
@@ -50,6 +51,18 @@ export default class CollectablePage extends Component {
         })
     }
 
+    updateState() {
+        DataManager.getCollectables("collectables", this.collectionId)
+        .then((collectables) => {
+            console.log("collectables", collectables)
+            this.setState({
+                collectables: collectables,
+                isLoaded: true
+            })
+        })
+    }
+
+
     componentDidMount() {
         DataManager.getCollectables("collectables", this.collectionId)
             .then((collectables) => {
@@ -67,6 +80,7 @@ export default class CollectablePage extends Component {
         return (
             <div>
                 <h4>{collection.title}</h4>
+                <div><Button>See Archived Collectables</Button></div>
                 {this.state.isLoaded ?
                     <div className="collectable-list-container">
                         <Button className="add-collectable-btn" onClick={this.toggle}>
@@ -84,6 +98,7 @@ export default class CollectablePage extends Component {
                                 <CollectableCard
                                     key={collectable.id}
                                     currentCollectable={collectable}
+                                    updateState={this.updateState}
                                     editCollectable={this.editCollectable}
                                     collectables={this.state.collectables} {...this.props} />
                             )
