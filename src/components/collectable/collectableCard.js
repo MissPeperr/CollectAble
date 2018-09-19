@@ -54,7 +54,6 @@ export default class CollectableCard extends Component {
     render() {
         return (
             <Card className="collectable-card">
-                {/* <Card> */}
                     <CardImg className="user-input-img" top width="25%" src={this.props.currentCollectable.imageURL} alt={this.props.currentCollectable.title} />
                     <CardBody>
                         <CardTitle className="collectable-title">
@@ -64,8 +63,6 @@ export default class CollectableCard extends Component {
                         </CardSubtitle>
                         <br></br>
                         <CardSubtitle>{this.props.currentCollectable.boughtPrice}</CardSubtitle>
-                        {/* <br></br> */}
-                        {/* <Button color="success" onClick={this.userSoldItem}>I Sold This!</Button> */}
                     </CardBody>
                     <hr></hr>
                     <div className="collectable-footer">
@@ -83,7 +80,6 @@ export default class CollectableCard extends Component {
                             <FontAwesomeIcon icon="trash-alt" />
                         </Button>
                     </div>
-                {/* </Card> */}
 
                 <Modal isOpen={this.state.deleteModal} toggle={this.toggleDelete} className="delete-modal">
                     <ModalBody>

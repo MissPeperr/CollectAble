@@ -57,16 +57,16 @@
       "id": 5
     },
     {
-      "title": "Make ALL the collections!",
-      "description": "How about that",
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "title": "Making bacon pancakes",
-      "description": "Make some bacon and you put it in a pancake\nMake some bacon and you put it in a pancakeMaksdfjhgksdfsakfdauhegrykkhsjadhjgvbnmfdkvjcbdfhnsmcvbjdhfswelkqjm,dfn bcfjkdlemnfjckdmsw dbvdkmse some bacon and you put it in a pancake\nMake some bacon and you put it in a pancake\nv\nv\nv\nMake some bacon and you put it in a pancakeMake some bacon and you put it in a pancakeMake some bacon and you put it in a pancake\nMake some bacon and you put it in a pancake\nv\nv",
+      "title": "All my friends",
+      "description": "null",
       "userId": 1,
       "id": 7
+    },
+    {
+      "title": "Just stuff I like",
+      "description": "All the things",
+      "userId": 2,
+      "id": 8
     }
   ],
   "collectables": [
@@ -85,9 +85,9 @@
       "title": "Dumbo Pin",
       "description": "Christmas Dumbo Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536949088/gr4br05kzogrj8omqesy.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 2,
       "id": 2
     },
@@ -164,7 +164,7 @@
       "title": "Space Mountain Pin",
       "description": "Stitch Rides Space Mountain from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536957761/lbxgevjrn96ovdahkyvt.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 2,
@@ -184,7 +184,7 @@
       "title": "Baymax Pin",
       "description": "Christmas Baymax Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537019991/yn426jfqxkpultrhpi0c.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 2,
@@ -204,9 +204,9 @@
       "title": "Frozen Ever After Pin",
       "description": "Frozen Ever After Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537208189/ye52swuwnj5lvuy7segk.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 2,
       "id": 15
     },
@@ -214,7 +214,7 @@
       "title": "Rockin' Roller Coaster Pin",
       "description": "The Rockin' Roller Coaster Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537282146/ylvbnfbadjkymz2lwrrr.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 2,
@@ -226,7 +226,7 @@
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376654/yiipynqn29aoeinhard0.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 5,
       "id": 18
     },
@@ -236,19 +236,59 @@
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376715/eiyhiok8myt1pn1ncuuu.jpg",
       "boughtPrice": "$560.00",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 5,
       "id": 21
     },
     {
-      "title": "test",
-      "description": "testing",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376737/jcbqiyuyb2thpkfwtxnc.jpg",
-      "boughtPrice": "$9.00",
+      "title": "what",
+      "description": "the heck",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537386944/t3imwd2ckqpzpdj5drfs.jpg",
+      "boughtPrice": "$4.95",
+      "soldPrice": null,
+      "isSold": true,
+      "collectionId": 5,
+      "id": 24
+    },
+    {
+      "title": "hey hey you you",
+      "description": "I don't like your girlfriend",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537392209/hcxaqjnp5bpobxm6nhir.jpg",
+      "boughtPrice": "$0.00",
+      "soldPrice": null,
+      "isSold": true,
+      "collectionId": 5,
+      "id": 25
+    },
+    {
+      "title": "pls work",
+      "description": "for the love of god",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537392252/tu31hpxgmdqg2bnookst.jpg",
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 5,
-      "id": 22
+      "id": 26
+    },
+    {
+      "title": "test",
+      "description": "testing the stuuuuuuuuffffff",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537392629/qq7rgoi4wdt5uzmc8x40.jpg",
+      "boughtPrice": "$0.00",
+      "soldPrice": null,
+      "isSold": true,
+      "collectionId": 5,
+      "id": 27
+    },
+    {
+      "title": "test",
+      "description": "Testing",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537396912/btstpazpwt2wcfhrli5s.jpg",
+      "boughtPrice": "$0.00",
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 8,
+      "id": 28
     }
   ],
   "groups": [

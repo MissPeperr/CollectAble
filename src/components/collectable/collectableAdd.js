@@ -16,7 +16,7 @@ class CollectableAdd extends Component {
             uploadURL: null,
             title: null,
             description: null,
-            imageURL: null,
+            imageURL: '',
             boughtPrice: "$0.00",
             soldPrice: null,
             collectionId: this.props.collectionId,
@@ -93,7 +93,7 @@ class CollectableAdd extends Component {
                 modal: !this.state.modal,
                 title: null,
                 description: null,
-                imageURL: null,
+                imageURL: '',
                 boughtPrice: "$0.00"
             })
             this.props.toggle();
