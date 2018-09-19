@@ -209,54 +209,14 @@
       "id": 17
     },
     {
-      "title": "Press F",
-      "description": "to pay respects",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537373138/dfrwbzko8brhjgun8au9.png",
-      "boughtPrice": "$0.00",
+      "title": "test",
+      "description": "testing",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537375119/mpuzrjsayit8zrkkyk7q.png",
+      "boughtPrice": null,
       "soldPrice": null,
       "isSold": false,
       "collectionId": 5,
       "id": 18
-    },
-    {
-      "title": "Poppy",
-      "description": "Golden Poppies",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537373156/hzk9jbmpdsabwnawummt.jpg",
-      "boughtPrice": "$0.00",
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 5,
-      "id": 19
-    },
-    {
-      "title": "Test",
-      "description": "testing",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537373170/qdpd7ruegyvcqs3lubdt.jpg",
-      "boughtPrice": "$11,500",
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 5,
-      "id": 20
-    },
-    {
-      "title": "How long can you gooooo",
-      "description": "the quick brown fox jumps over the lazy dog\nthe quick brown fox jumps over the lazy dog\nthe quick brown fox jumps over the lazy dog\nthe quick brown fox jumps over the lazy dog\nthe quick brown fox jumps over the lazy dog\nv\nv\nv\nv\n",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537373338/yyghkshl4zazbc77xpwl.jpg",
-      "boughtPrice": null,
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 5,
-      "id": 21
-    },
-    {
-      "title": "Now for a short one",
-      "description": "Boo",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537373360/gjaviac9x5tbxmc8yq9q.jpg",
-      "boughtPrice": null,
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 5,
-      "id": 22
     }
   ],
   "groups": [

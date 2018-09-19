@@ -35,9 +35,9 @@ export default class CollectableCard extends Component {
     }
 
     deleteCollectable = (string, id) => {
-        // this.toggleDelete();
+        this.toggleDelete();
         DataManager.delete(string, id)
-            .then(DataManager.getCollectables("collectables", this.collectionId));
+            .then(this.props.updateState);
     }
 
 

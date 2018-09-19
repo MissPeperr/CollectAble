@@ -21,16 +21,13 @@ export default class CollectablePage extends Component {
         };
 
         this.toggle = this.toggle.bind(this);
+        this.updateState = this.updateState.bind(this);
     }
     collectionId = parseInt(this.props.match.params.collectionId, 0)
 
     toggle = () => {
         this.setState({
-            modal: !this.state.modal,
-            title: null,
-            description: null,
-            imageURL: null,
-            boughtPrice: null
+            modal: !this.state.modal
         });
     }
 
@@ -58,6 +55,17 @@ export default class CollectablePage extends Component {
         // this function should be called when the user clicks on teh "See Archive List" button
         // this function will call ALL the collectables instead of just the ones that have the 'isSold = false'
         // maybe this should be on the previous page?
+    }
+    
+    updateState() {
+        DataManager.getCollectables("collectables", this.collectionId)
+        .then((collectables) => {
+            console.log("collectables", collectables)
+            this.setState({
+                collectables: collectables,
+                isLoaded: true
+            })
+        })
     }
 
 
@@ -96,6 +104,7 @@ export default class CollectablePage extends Component {
                                 <CollectableCard
                                     key={collectable.id}
                                     currentCollectable={collectable}
+                                    updateState={this.updateState}
                                     editCollectable={this.editCollectable}
                                     collectables={this.state.collectables} {...this.props} />
                             )
