@@ -14,18 +14,27 @@
     flex-wrap: wrap;
     .add-collectable-btn  {
         @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px);
-        margin: 8rem 2rem 8rem 2rem;
+        margin: 2rem 2rem 25rem 2rem;
             .plus-btn {
                 font-size: 50px;
             }
                             
     }
     .collectable-card{
-        margin: 4rem 2rem 4rem 2rem;
+        margin: 2rem 2rem 2rem 2rem;
         min-width: 15rem;
-        min-height: 20rem;
+        min-height: 35rem;
         max-width: 15rem;
-        max-height: 20rem;
+        max-height: 35rem;
+
+        .card-body {
+            overflow-y: auto;
+            ::-webkit-scrollbar {
+                display: none;
+                color: blue;
+            }
+    
+        }
         .user-input-img {
             padding: .50rem .50rem .50rem .50rem;
             width: 100%;

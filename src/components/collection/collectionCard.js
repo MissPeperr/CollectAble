@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
+import { Card, CardHeader, CardBody, CardTitle, CardSubtitle, Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import CollectionEdit from './collectionEdit';
 import DataManager from '../modules/DataManager';
@@ -42,18 +42,20 @@ class CollectionCard extends Component {
 
     render() {
         return (
-            <div className="collection-card">
-                <Card>
-                    <CardBody>
+            <Card className="collection-card">
+                        <CardHeader>
                         <Link to={`/collection/${this.props.currentCollection.id}`}
                             className="collectable-list-link">
                             <CardTitle className="collection-title">
                                 {this.props.currentCollection.title}
                             </CardTitle>
                         </Link>
+                        </CardHeader>
+                            <CardBody>
                         <CardSubtitle className="collection-description">{this.props.currentCollection.description}
                         </CardSubtitle>
                     </CardBody>
+                    <hr></hr>
                     <div className="collection-footer">
                         <Button id="edit-collection-btn" onClick={this.toggle}><FontAwesomeIcon icon="edit" /></Button>
                         <CollectionEdit key={this.props.currentCollection.id}
@@ -67,7 +69,6 @@ class CollectionCard extends Component {
                             <FontAwesomeIcon icon="trash-alt" />
                         </Button>
                     </div>
-                </Card>
 
                 <Modal isOpen={this.state.deleteModal} toggle={this.toggleDelete} className="delete-modal">
                     <ModalBody>
@@ -80,7 +81,7 @@ class CollectionCard extends Component {
                     </ModalFooter>
                 </Modal>
 
-            </div>
+            </Card>
         )
 
     }

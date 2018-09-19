@@ -31,9 +31,9 @@ export default Object.create(null, {
                 .then(res => res.json())
         }
     },
-    getSortedData: {
-        value: (resource, userId, sortBy, order) => {
-            return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=isSold=true`)
+    getSoldCollectables: {
+        value: (resource, collectionId, boolean) => {
+            return fetch(`${remoteURL}/${resource}?collectionId=${collectionId}&isSold=${boolean}`)
                 .then(res => res.json())
         }
     },

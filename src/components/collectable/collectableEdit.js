@@ -42,7 +42,7 @@ class CollectableEdit extends Component {
         this.setState({
             isSold: !this.state.isSold
         })
-        window.setTimeout(this.ifSold, 2000)
+        window.setTimeout(this.ifSold, 1000)
     }
 
     editCollectableFunc = () => {
