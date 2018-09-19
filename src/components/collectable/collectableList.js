@@ -54,6 +54,12 @@ export default class CollectablePage extends Component {
         })
     }
 
+    showArchive = () => {
+        // this function should be called when the user clicks on teh "See Archive List" button
+        // this function will call ALL the collectables instead of just the ones that have the 'isSold = false'
+        // maybe this should be on the previous page?
+    }
+
 
     componentDidMount() {
         DataManager.getCollectables("collectables", this.collectionId)
@@ -67,7 +73,7 @@ export default class CollectablePage extends Component {
 
 
     render() {
-        // need this here so when user refreshes, the information about the collection is still there
+        // need this here so when user refreshes, the information about the collection is still there 👍
         const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
         return (
             <div>
