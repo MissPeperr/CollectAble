@@ -7,14 +7,16 @@
 .collection-card .collection-footer #edit-collection-btn {
   background-color: transparent;
   border-color: transparent;
-  color: green; }
+  color: green;
+  padding: 0; }
 
 .collection-card .collection-footer #delete-collection-btn {
   background-color: transparent;
   border-color: transparent;
-  color: darkred; }
+  color: darkred;
+  padding: 0; }
 
-.add-collection-btn, .collection-card {
+.add-collection-btn {
   min-width: 20rem;
   max-height: 30rem;
   max-width: 20rem;
@@ -38,4 +40,16 @@
     font-size: 50px; }
 
 .collection-card {
+  min-width: 20rem;
+  max-height: 15rem;
+  max-width: 20rem;
+  max-height: 15rem;
   margin: 2rem 2rem 2rem 2rem; }
+  .collection-card .card-body {
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .collection-card .card-body ::-webkit-scrollbar {
+      display: none;
+      color: blue; }
+  .collection-card .card-header {
+    background-color: transparent; }

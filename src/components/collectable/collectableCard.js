@@ -40,11 +40,21 @@ export default class CollectableCard extends Component {
             .then(this.props.updateState);
     }
 
+    ifSold = () => {
+        if(this.state.isSold === true){
+            alert("This collectable was sold! This collectable has been taken out of your current collection, but can still be seen inside of your archives! If you didn't mean to sell this, click the \"I Sold This\" button again before saving.")              
+        } else if(this.state.isSold === false){
+            alert("Collectable has been put back in your current collection!")
+        } else {
+            alert("There was an error selling your collectable.")
+        }
+    }
+
 
     render() {
         return (
-            <div className="collectable-card">
-                <Card>
+            <Card className="collectable-card">
+                {/* <Card> */}
                     <CardImg className="user-input-img" top width="25%" src={this.props.currentCollectable.imageURL} alt={this.props.currentCollectable.title} />
                     <CardBody>
                         <CardTitle className="collectable-title">
@@ -54,6 +64,8 @@ export default class CollectableCard extends Component {
                         </CardSubtitle>
                         <br></br>
                         <CardSubtitle>{this.props.currentCollectable.boughtPrice}</CardSubtitle>
+                        {/* <br></br> */}
+                        {/* <Button color="success" onClick={this.userSoldItem}>I Sold This!</Button> */}
                     </CardBody>
                     <hr></hr>
                     <div className="collectable-footer">
@@ -64,13 +76,14 @@ export default class CollectableCard extends Component {
                             editCollectable={this.props.editCollectable}
                             toggle={this.toggle}
                             modal={this.state.modal} />
+                            <Button color="success" onClick={this.userSoldItem}>I Sold This!</Button>
                         <Button id="delete-collectable-btn" onClick={() => {
                             this.toggleDelete();
                         }}>
                             <FontAwesomeIcon icon="trash-alt" />
                         </Button>
                     </div>
-                </Card>
+                {/* </Card> */}
 
                 <Modal isOpen={this.state.deleteModal} toggle={this.toggleDelete} className="delete-modal">
                     <ModalBody>
@@ -82,7 +95,7 @@ export default class CollectableCard extends Component {
                     </ModalFooter>
                 </Modal>
 
-            </div>
+            </Card>
         )
     }
 }

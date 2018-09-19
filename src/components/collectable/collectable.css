@@ -7,12 +7,14 @@
 .collectable-list-container .collectable-card .collectable-footer #edit-collectable-btn {
   background-color: transparent;
   border-color: transparent;
-  color: green; }
+  color: green;
+  padding: 0; }
 
 .collectable-list-container .collectable-card .collectable-footer #delete-collectable-btn {
   background-color: transparent;
   border-color: transparent;
-  color: darkred; }
+  color: darkred;
+  padding: 0; }
 
 .collectable-list-container {
   margin: 2rem 4rem 2rem 4rem;
@@ -27,15 +29,20 @@
     -webkit-box-shadow: inset 0px 0px 17px 5px #949494;
     -moz-box-shadow: inset 0px 0px 17px 5px #949494;
     box-shadow: inset 0px 0px 17px 5px #949494;
-    margin: 8rem 2rem 8rem 2rem; }
+    margin: 2rem 2rem 25rem 2rem; }
     .collectable-list-container .add-collectable-btn .plus-btn {
       font-size: 50px; }
   .collectable-list-container .collectable-card {
-    margin: 4rem 2rem 4rem 2rem;
+    margin: 2rem 2rem 2rem 2rem;
     min-width: 15rem;
-    min-height: 20rem;
+    min-height: 35rem;
     max-width: 15rem;
-    max-height: 20rem; }
+    max-height: 35rem; }
+    .collectable-list-container .collectable-card .card-body {
+      overflow-y: auto; }
+      .collectable-list-container .collectable-card .card-body ::-webkit-scrollbar {
+        display: none;
+        color: blue; }
     .collectable-list-container .collectable-card .user-input-img {
       padding: .50rem .50rem .50rem .50rem;
       width: 100%;

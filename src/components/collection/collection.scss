@@ -17,9 +17,26 @@
     }
 }
 
+
+
 .collection-card{
-    @extend %card-size;
+    min-width: 20rem;
+    max-height: 15rem;
+    max-width: 20rem;
+    max-height: 15rem;
     margin: 2rem 2rem 2rem 2rem;
+    .card-body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        ::-webkit-scrollbar {
+            display: none;
+            color: blue;
+        }
+
+    }
+    .card-header {
+        background-color: transparent;
+    }
     .collection-footer {
         @extend %card-footer;
         #edit-collection-btn {

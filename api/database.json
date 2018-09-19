@@ -55,6 +55,18 @@
       "description": "The collection I test stuff in",
       "userId": 1,
       "id": 5
+    },
+    {
+      "title": "Make ALL the collections!",
+      "description": "How about that",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "title": "Making bacon pancakes",
+      "description": "Make some bacon and you put it in a pancake\nMake some bacon and you put it in a pancakeMaksdfjhgksdfsakfdauhegrykkhsjadhjgvbnmfdkvjcbdfhnsmcvbjdhfswelkqjm,dfn bcfjkdlemnfjckdmsw dbvdkmse some bacon and you put it in a pancake\nMake some bacon and you put it in a pancake\nv\nv\nv\nMake some bacon and you put it in a pancakeMake some bacon and you put it in a pancakeMake some bacon and you put it in a pancake\nMake some bacon and you put it in a pancake\nv\nv",
+      "userId": 1,
+      "id": 7
     }
   ],
   "collectables": [
@@ -90,9 +102,9 @@
     },
     {
       "title": "Spring Elsa",
-      "description": null,
+      "description": "Small Spring Elsa part of the Frozen Spring Collection",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536950411/wmetcimdjnbxycnkujpf.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -102,7 +114,7 @@
       "title": "Spring Sven",
       "description": "Small Spring Sven that's part of the Frozen Spring collection",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536951756/bhznajrot0ivubmqbtfk.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -112,7 +124,7 @@
       "title": "Strawberry Minnie",
       "description": "Small Strawberry Minnie from Target",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536951882/fz8r48sltnyhs0vwknkc.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -122,7 +134,7 @@
       "title": "Corpse Bride Minnie",
       "description": "Mini Corpse Bride Minnie from the Halloween set",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536951940/rjkvnofjrw3zbhcug4db.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -132,7 +144,7 @@
       "title": "Elsa",
       "description": "Small Elsa",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536952103/gd10fzssoe3x8g3pd9yk.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -142,7 +154,7 @@
       "title": "Minnie",
       "description": "Large Minnie",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536957552/qlfrz3jr0xhbvs3vaigi.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -162,7 +174,7 @@
       "title": "Spider Pluto",
       "description": "Spider Pluto from the Halloween collection",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536958460/wgsaf1iqiktvgeak0x0o.jpg",
-      "boughtPrice": null,
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -211,12 +223,32 @@
     {
       "title": "test",
       "description": "testing",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537375119/mpuzrjsayit8zrkkyk7q.png",
-      "boughtPrice": null,
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376654/yiipynqn29aoeinhard0.jpg",
+      "boughtPrice": "$0.00",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 5,
       "id": 18
+    },
+    {
+      "title": "sup",
+      "description": "dudes",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376715/eiyhiok8myt1pn1ncuuu.jpg",
+      "boughtPrice": "$560.00",
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 5,
+      "id": 21
+    },
+    {
+      "title": "test",
+      "description": "testing",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376737/jcbqiyuyb2thpkfwtxnc.jpg",
+      "boughtPrice": "$9.00",
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 5,
+      "id": 22
     }
   ],
   "groups": [
