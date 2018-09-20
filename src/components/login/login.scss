@@ -1,0 +1,89 @@
+
+
+
+
+
+#login-div {
+	width: 100wh;
+	height: 100vh;
+	background: linear-gradient(-45deg, rgb(250, 153, 6), rgb(248, 94, 153), #23A6D5, rgb(106, 245, 79));
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 45s ease infinite;
+	-moz-animation: Gradient 45s ease infinite;
+    animation: Gradient 45s ease infinite;
+    #form-container{
+        border-radius: 10%;
+        background-color: whitesmoke;
+        margin: 0rem 30rem 0rem 30rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        #login-form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+            #email {
+                margin: 0rem 2rem 0rem 2rem;
+            }
+            #password {
+                margin: 0rem 2rem 0rem 2rem;
+
+            }
+        }
+        #register-form {
+            // margin: 0rem 30rem 0rem 30rem;
+            // background-color: white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            #registerEmail {
+                margin: 0rem 2rem 0rem 2rem;
+            }
+            #registerPassword {
+                margin: 0rem 2rem 0rem 2rem;
+
+            }
+        }
+    }
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+ 

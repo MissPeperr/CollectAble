@@ -2,3 +2,17 @@
     height: 35px;
     width: 35px;
 }
+.navbar {
+    a {
+        // font-family: 'Fredericka the Great', cursive;
+        font-size: 30px;
+        margin-right: 0;
+    }
+}
+
+.nav-item {
+    .btn{
+        background-color: rgb(108, 162, 184);
+        border-color: rgb(107, 153, 172);
+    }
+}

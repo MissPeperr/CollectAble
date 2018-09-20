@@ -14,7 +14,9 @@ export default class CollectableCard extends Component {
         super(props);
         this.state = {
             modal: false,
-            deleteModal: false
+            deleteModal: false,
+            // hidden: false,
+            // isSold: this.props.currentCollectable.isSold
         };
 
         this.toggle = this.toggle.bind(this);
@@ -39,16 +41,16 @@ export default class CollectableCard extends Component {
         DataManager.delete(string, id)
             .then(this.props.updateState);
     }
-
-    ifSold = () => {
-        if(this.state.isSold === true){
-            alert("This collectable was sold! This collectable has been taken out of your current collection, but can still be seen inside of your archives! If you didn't mean to sell this, click the \"I Sold This\" button again before saving.")              
-        } else if(this.state.isSold === false){
-            alert("Collectable has been put back in your current collection!")
-        } else {
-            alert("There was an error selling your collectable.")
-        }
-    }
+    // Alerts for when the user clicks on the "I Sold This" button, however I don't think I should have it on this page.
+    // ifSold = () => {
+    //     if(this.state.isSold === true){
+    //         alert("This collectable was sold! This collectable has been taken out of your current collection, but can still be seen inside of your archives! If you didn't mean to sell this, click the \"I Sold This\" button again before saving.")              
+    //     } else if(this.state.isSold === false){
+    //         alert("Collectable has been put back in your current collection!")
+    //     } else {
+    //         alert("There was an error selling your collectable.")
+    //     }
+    // }
 
 
     render() {
@@ -73,7 +75,7 @@ export default class CollectableCard extends Component {
                             editCollectable={this.props.editCollectable}
                             toggle={this.toggle}
                             modal={this.state.modal} />
-                            <Button color="success" onClick={this.userSoldItem}>I Sold This!</Button>
+                            {/* <Button color="success" onClick={this.userSoldItem}>I Sold This!</Button> */}
                         <Button id="delete-collectable-btn" onClick={() => {
                             this.toggleDelete();
                         }}>

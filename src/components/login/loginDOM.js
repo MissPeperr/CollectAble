@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DataManager from '../modules/DataManager';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './login.css'
 
 
 export default class Login extends Component {
@@ -32,7 +33,7 @@ export default class Login extends Component {
             DataManager.getAll("users").then((users) => {
                 let loginUser = users.find(user => user.email === this.state.registerEmail)
                 if (loginUser) {
-                    alert("This email has already been registered") 
+                    alert("This email has already been registered")
                 } else {
                     let newUser = {
                         password: this.state.registerPassword,
@@ -73,59 +74,57 @@ export default class Login extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <form onSubmit={this.handleLogin} id="login-form">
-                    <h1 className="h3 mb-3 font-weight-normal">CollectAble</h1>
-                    <label htmlFor="inputEmail">
-                        Email:
+            <div id="login-div">
+                <div id="form-container">
+                    <form onSubmit={this.handleLogin} id="login-form">
+                        <h1 className="h3 mb-3 font-weight-normal">CollectAble</h1>
+                        <label htmlFor="inputEmail">
+                            Email:
                 </label>
-                    <input onChange={this.handleFieldChange} type="email"
-                        id="email"
-                        placeholder="Email address"
-                        required="" autoFocus="" />
-                    <label htmlFor="inputPassword">
-                        Password:
+                        <input onChange={this.handleFieldChange} type="email"
+                            id="email"
+                            placeholder="Email address"
+                            required="" autoFocus="" />
+                        <label htmlFor="inputPassword">
+                            Password:
                 </label>
-                    <input onChange={this.handleFieldChange} type="password"
-                        id="password"
-                        placeholder="Password"
-                        required="" />
-                    <button type="submit">
-                        Sign in
+                        <input onChange={this.handleFieldChange} type="password"
+                            id="password"
+                            placeholder="Password"
+                            required="" />
+                        <button type="submit">
+                            Sign in
                 </button>
-                    Remember Me:
+                        Remember Me:
                 <input onClick={() => { this.setState({ isChecked: true }) }} id="isChecked" type="checkbox" name="remember" />
-                </form>
-                {/* <div>
-                    <h6>New to the site?</h6>
-                    <Button color="light"><Link to="/register">Register</Link></Button>
-                </div> */}
-                <form id="register-form">
-                    <h4 className="h3 mb-3 font-weight-normal">New here?</h4>
-                    <label htmlFor="inputEmail">
-                        Email:
+                    </form>
+                    <form id="register-form">
+                        <h4 className="h3 mb-3 font-weight-normal">New here?</h4>
+                        <label htmlFor="inputEmail">
+                            Email:
             </label>
-                    <input onChange={this.handleFieldChange}
-                        defaultValue={this.state.registerEmail}
-                        type="email"
-                        id="registerEmail"
-                        placeholder="Email address"
-                        required=""
-                        autoFocus="" />
-                    <label htmlFor="inputPassword">
-                        Password:
+                        <input onChange={this.handleFieldChange}
+                            defaultValue={this.state.registerEmail}
+                            type="email"
+                            id="registerEmail"
+                            placeholder="Email address"
+                            required=""
+                            autoFocus="" />
+                        <label htmlFor="inputPassword">
+                            Password:
             </label>
-                    <input onChange={this.handleFieldChange}
-                        defaultValue={this.state.registerPassword}
-                        type="password"
-                        id="registerPassword"
-                        placeholder="Password"
-                        required="" />
-                    <button type="submit" onClick={this.handleRegister}>
-                        Register
+                        <input onChange={this.handleFieldChange}
+                            defaultValue={this.state.registerPassword}
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Password"
+                            required="" />
+                        <button type="submit" onClick={this.handleRegister}>
+                            Register
                 </button>
-                </form>
-            </React.Fragment>
+                    </form>
+                </div>
+            </div>
         )
     }
 }

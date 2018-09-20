@@ -3,7 +3,10 @@
     
 
 
-
+#archive-btn {
+    background-color: rgb(108, 162, 184);
+    border-color: rgb(107, 153, 172);
+}
 
 .collectable-list-container{
     margin: 2rem 4rem 2rem 4rem;
@@ -33,7 +36,6 @@
                 display: none;
                 color: blue;
             }
-    
         }
         .user-input-img {
             padding: .50rem .50rem .50rem .50rem;

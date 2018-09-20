@@ -16,6 +16,10 @@
   color: darkred;
   padding: 0; }
 
+#archive-btn {
+  background-color: #6ca2b8;
+  border-color: #6b99ac; }
+
 .collectable-list-container {
   margin: 2rem 4rem 2rem 4rem;
   padding: 1rem;

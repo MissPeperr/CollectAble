@@ -1,3 +1,11 @@
 #logo {
   height: 35px;
   width: 35px; }
+
+.navbar a {
+  font-size: 30px;
+  margin-right: 0; }
+
+.nav-item .btn {
+  background-color: #6ca2b8;
+  border-color: #6b99ac; }
