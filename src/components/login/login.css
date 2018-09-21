@@ -6,6 +6,8 @@
   -webkit-animation: Gradient 45s ease infinite;
   -moz-animation: Gradient 45s ease infinite;
   animation: Gradient 45s ease infinite; }
+  #login-div button {
+    margin: 0rem 2rem 0rem 2rem; }
   #login-div #form-container {
     border-radius: 10%;
     background-color: whitesmoke;
