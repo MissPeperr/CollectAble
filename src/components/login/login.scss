@@ -26,13 +26,19 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            
+            h4 {
+                text-align: center;
+            }
             #email {
                 margin: 0rem 2rem 0rem 2rem;
             }
             #password {
                 margin: 0rem 2rem 0rem 2rem;
 
+            }
+            #remember-me-div {
+                display: flex;
+                flex-direction: row;
             }
         }
         #register-form {

@@ -63,16 +63,16 @@
       "id": 9
     },
     {
-      "title": "Un-categorized",
-      "description": "Default",
-      "userId": 1,
-      "id": 10
-    },
-    {
       "title": "All my friends",
       "description": "{null}",
       "userId": 1,
       "id": 11
+    },
+    {
+      "title": "Test",
+      "description": "The collection I test stuff in",
+      "userId": 1,
+      "id": 12
     }
   ],
   "collectables": [
@@ -265,6 +265,26 @@
       "isSold": true,
       "collectionId": 1,
       "id": 32
+    },
+    {
+      "title": "Hey",
+      "description": "Hello!",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537546948/bdb8prbajnsc9lv2kgwp.jpg",
+      "boughtPrice": "$0.00",
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 12,
+      "id": 33
+    },
+    {
+      "title": "Test",
+      "description": "testing this shit out man",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537546978/ndog0abaronmz5ah3kaa.jpg",
+      "boughtPrice": "$9.99",
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 12,
+      "id": 34
     }
   ],
   "groups": [

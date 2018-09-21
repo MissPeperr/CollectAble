@@ -19,10 +19,15 @@
       display: flex;
       justify-content: center;
       flex-direction: column; }
+      #login-div #form-container #login-form h4 {
+        text-align: center; }
       #login-div #form-container #login-form #email {
         margin: 0rem 2rem 0rem 2rem; }
       #login-div #form-container #login-form #password {
         margin: 0rem 2rem 0rem 2rem; }
+      #login-div #form-container #login-form #remember-me-div {
+        display: flex;
+        flex-direction: row; }
     #login-div #form-container #register-form {
       display: flex;
       justify-content: center;

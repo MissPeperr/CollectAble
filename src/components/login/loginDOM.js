@@ -77,7 +77,7 @@ export default class Login extends Component {
             <div id="login-div">
                 <div id="form-container">
                     <form onSubmit={this.handleLogin} id="login-form">
-                        <h1 className="h3 mb-3 font-weight-normal">CollectAble</h1>
+                        <h4 className="h3 mb-3 font-weight-normal">CollectAble</h4>
                         <label htmlFor="inputEmail">
                             Email:
                 </label>
@@ -94,9 +94,11 @@ export default class Login extends Component {
                             required="" />
                         <button type="submit">
                             Sign in
-                </button>
+                        </button>
+                        <div id="remember-me-div">
                         Remember Me:
                 <input onClick={() => { this.setState({ isChecked: true }) }} id="isChecked" type="checkbox" name="remember" />
+                </div>
                     </form>
                     <form id="register-form">
                         <h4 className="h3 mb-3 font-weight-normal">New here?</h4>
