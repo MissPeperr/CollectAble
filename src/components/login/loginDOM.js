@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Input } from 'reactstrap';
 import DataManager from '../modules/DataManager';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css'
@@ -92,13 +93,14 @@ export default class Login extends Component {
                             id="password"
                             placeholder="Password"
                             required="" />
+                        <div id="remember-me-div">
+                            Remember Me:
+                <input onClick={() => { this.setState({ isChecked: true }) }} id="isChecked" type="checkbox" name="remember" />
+                        </div>
                         <button type="submit">
                             Sign in
                         </button>
-                        <div id="remember-me-div">
-                        Remember Me:
-                <input onClick={() => { this.setState({ isChecked: true }) }} id="isChecked" type="checkbox" name="remember" />
-                </div>
+
                     </form>
                     <form id="register-form">
                         <h4 className="h3 mb-3 font-weight-normal">New here?</h4>

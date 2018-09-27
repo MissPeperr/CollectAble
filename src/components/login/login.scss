@@ -1,4 +1,17 @@
+@import '../shared.scss';
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+input:focus {
+    box-shadow: inset 0 0 0 3px #fff,
+			0 0 0 4px #fff,
+			3px -3px 30px #1beabd, 
+            -3px 3px 30px #10abff;
+}
 
 
 
@@ -12,15 +25,20 @@
 	-moz-animation: Gradient 45s ease infinite;
     animation: Gradient 45s ease infinite;
     button{
-        margin: 0rem 2rem 0rem 2rem;
+        margin: 0rem 2rem 2.6rem 2rem;
     }
     #form-container{
-        border-radius: 10%;
+        border-radius: 1%;
         background-color: whitesmoke;
-        margin: 0rem 30rem 0rem 30rem;
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        @include add-new-card(white, inset, rgba(148,148,148,1), 0px 0px 10px 1px);
 
         #login-form {
             display: flex;
@@ -28,31 +46,59 @@
             flex-direction: column;
             h4 {
                 text-align: center;
+                margin-top: 1rem;
             }
+            label {
+                margin: 0rem 2rem 0rem 2rem;
+            }
+            
             #email {
-                margin: 0rem 2rem 0rem 2rem;
+                margin: 0rem 4rem 0rem 4rem;
+                border-radius: 9999em;
+                border: 0;
+            //     box-shadow: inset 0 0 0 3px #fff,
+			// 0 0 0 4px #fff,
+			// 3px -3px 30px #1beabd, 
+            // -3px 3px 30px #10abff;
             }
-            #password {
-                margin: 0rem 2rem 0rem 2rem;
 
             }
+            
+            #password {
+                margin: 0rem 4rem .5rem 4rem;
+                border-radius: 9999em;
+            //     box-shadow: inset 0 0 0 3px #fff,
+			// 0 0 0 4px #fff,
+			// 3px -3px 30px #1beabd, 
+			// -3px 3px 30px #10abff;
+            }
             #remember-me-div {
+                margin-bottom: .1rem;
+                align-items: center;
                 display: flex;
-                flex-direction: row;
+                justify-content: center;
             }
         }
         #register-form {
-            // margin: 0rem 30rem 0rem 30rem;
-            // background-color: white;
             display: flex;
             justify-content: center;
             flex-direction: column;
-            #registerEmail {
+            h4 {
+                text-align: center;
+            }
+            label {
                 margin: 0rem 2rem 0rem 2rem;
             }
+            button {
+                margin-bottom: 2rem;
+            }
+            #registerEmail {
+                margin: 0rem 4rem 0rem 4rem;
+                border-radius: 9999em;
+            }
             #registerPassword {
-                margin: 0rem 2rem 0rem 2rem;
-
+                margin: 0rem 4rem 2rem 4rem;
+                border-radius: 9999em;
             }
         }
     }
@@ -93,6 +139,3 @@
 		background-position: 0% 50%
 	}
 }
-
-
- 

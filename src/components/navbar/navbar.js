@@ -34,11 +34,10 @@ export default class NavBar extends Component {
       sessionStorage.removeItem("user");
       window.location.reload();
     } else {
-      alert("There was a problem logging out.")
+      alert("There was a problem logging out. Please try again.")
     }
   }
 
-  // add log out functionality to navlink
   render() {
     return (
       <div>

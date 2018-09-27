@@ -23,6 +23,14 @@
       "firstName": "",
       "lastName": "",
       "id": 3
+    },
+    {
+      "password": "me",
+      "email": "hithere@me.com",
+      "DOB": "",
+      "firstName": "",
+      "lastName": "",
+      "id": 4
     }
   ],
   "collections": [
@@ -67,12 +75,6 @@
       "description": "{null}",
       "userId": 1,
       "id": 11
-    },
-    {
-      "title": "Test",
-      "description": "The collection I test stuff in",
-      "userId": 1,
-      "id": 12
     }
   ],
   "collectables": [
@@ -138,11 +140,11 @@
     },
     {
       "title": "Elsa",
-      "description": "Small Elsa",
+      "description": "Small Elsa is pretty cute!",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536952103/gd10fzssoe3x8g3pd9yk.jpg",
       "boughtPrice": "$4.95",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 1,
       "id": 8
     },
@@ -265,26 +267,6 @@
       "isSold": true,
       "collectionId": 1,
       "id": 32
-    },
-    {
-      "title": "Hey",
-      "description": "Hello!",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537546948/bdb8prbajnsc9lv2kgwp.jpg",
-      "boughtPrice": "$0.00",
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 12,
-      "id": 33
-    },
-    {
-      "title": "Test",
-      "description": "testing this shit out man",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537546978/ndog0abaronmz5ah3kaa.jpg",
-      "boughtPrice": "$9.99",
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 12,
-      "id": 34
     }
   ],
   "groups": [
