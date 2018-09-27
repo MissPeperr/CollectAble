@@ -1,3 +1,6 @@
+.collectable-list-container .collectable-card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
 .collectable-list-container .collectable-card .collectable-footer {
   display: flex;
   justify-content: space-between;
@@ -16,12 +19,23 @@
   color: darkred;
   padding: 0; }
 
+#collection-page-container {
+  display: flex;
+  flex-direction: column; }
+  #collection-page-container h4 {
+    margin-top: 1rem;
+    align-self: center; }
+  #collection-page-container #archive-btn-div {
+    align-self: center; }
+  #collection-page-container #current-btn-div {
+    align-self: center; }
+
 #archive-btn {
   background-color: #6ca2b8;
   border-color: #6b99ac; }
 
 .collectable-list-container {
-  margin: 2rem 4rem 2rem 4rem;
+  margin: 1rem 4rem 2rem 4rem;
   padding: 1rem;
   display: flex;
   justify-content: center;

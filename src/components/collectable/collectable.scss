@@ -1,7 +1,20 @@
 @import 'components/shared.scss';
 
     
-
+#collection-page-container {
+    display: flex;
+    flex-direction: column;
+    h4 {
+        margin-top: 1rem;
+        align-self: center;
+    }
+    #archive-btn-div {
+        align-self: center;
+    }
+    #current-btn-div {
+        align-self: center;
+    }
+}
 
 #archive-btn {
     background-color: rgb(108, 162, 184);
@@ -9,7 +22,7 @@
 }
 
 .collectable-list-container{
-    margin: 2rem 4rem 2rem 4rem;
+    margin: 1rem 4rem 2rem 4rem;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -29,6 +42,7 @@
         min-height: 35rem;
         max-width: 15rem;
         max-height: 35rem;
+        @extend %best-box-shadow;
 
         .card-body {
             overflow-y: auto;

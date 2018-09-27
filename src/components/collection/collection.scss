@@ -1,12 +1,18 @@
 @import 'components/shared.scss';
 
-
+body{
+    background-color: rgba(108, 163, 184, 0.336);
+}
 .collection-list-container {
-    margin: 4rem 4rem 4rem 8rem;
+    margin: auto;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    font-family: 'Muli', sans-serif;
+    // font-family: 'Nanum Myeongjo', serif;
+    // font-family: 'Sorts Mill Goudy', serif;
+
 }
 
 .add-collection-btn {
@@ -15,6 +21,10 @@
     @extend %card-size;
     .plus-btn{
         font-size: 50px;
+    }
+    p {
+        font-family: 'Muli', sans-serif;
+        font-size: 1.5rem;
     }
 }
 
@@ -26,9 +36,14 @@
     max-width: 20rem;
     max-height: 15rem;
     margin: 2rem 2rem 2rem 2rem;
+    @extend %best-box-shadow;
     .card-body {
         overflow-x: hidden;
         overflow-y: auto;
+        border-bottom: transparent;
+        h6 {
+            font-size: 1.25rem;
+        }
         ::-webkit-scrollbar {
             display: none;
             color: blue;
@@ -37,8 +52,15 @@
     }
     .card-header {
         background-color: transparent;
+        // font-family: 'Julius Sans One', sans-serif;
+        font-family: 'Muli', sans-serif;
+        border-bottom: transparent;
+        h5 {
+            font-size: 1.5rem;
+        }
     }
     .collection-footer {
+        border-top: transparent;
         @extend %card-footer;
         #edit-collection-btn {
             @extend %edit-btn;

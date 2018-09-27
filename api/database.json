@@ -75,6 +75,18 @@
       "description": "{null}",
       "userId": 1,
       "id": 11
+    },
+    {
+      "title": "Let's Collect Things!",
+      "description": "ALL THE THINGS!",
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "title": "SO MANY THINGS",
+      "description": "LIKE WOW SO MANY",
+      "userId": 1,
+      "id": 13
     }
   ],
   "collectables": [

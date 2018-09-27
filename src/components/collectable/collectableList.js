@@ -114,7 +114,7 @@ export default class CollectablePage extends Component {
         // need this here so when user refreshes, the information about the collection is still there 👍
         const collection = this.props.collections.find(a => a.id === parseInt(this.props.match.params.collectionId, 0)) || {}
         return (
-            <div>
+            <div id="collection-page-container">
                 <h4>{collection.title}</h4>
                 {!this.state.hidden ? 
                 <div id="archive-btn-div"><Button id="archive-btn" onClick={() => this.showArchive(true)}>See Archived Collectables</Button></div>

@@ -1,3 +1,6 @@
+.collection-card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
 .collection-card .collection-footer {
   display: flex;
   justify-content: space-between;
@@ -22,12 +25,16 @@
   max-width: 20rem;
   max-height: 30rem; }
 
+body {
+  background-color: rgba(108, 163, 184, 0.336); }
+
 .collection-list-container {
-  margin: 4rem 4rem 4rem 8rem;
+  margin: auto;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  font-family: 'Muli', sans-serif; }
 
 .add-collection-btn {
   background-color: #b3b3b3;
@@ -38,6 +45,9 @@
   margin: 2rem 2rem 2rem 2rem; }
   .add-collection-btn .plus-btn {
     font-size: 50px; }
+  .add-collection-btn p {
+    font-family: 'Muli', sans-serif;
+    font-size: 1.5rem; }
 
 .collection-card {
   min-width: 20rem;
@@ -47,9 +57,18 @@
   margin: 2rem 2rem 2rem 2rem; }
   .collection-card .card-body {
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: auto;
+    border-bottom: transparent; }
+    .collection-card .card-body h6 {
+      font-size: 1.25rem; }
     .collection-card .card-body ::-webkit-scrollbar {
       display: none;
       color: blue; }
   .collection-card .card-header {
-    background-color: transparent; }
+    background-color: transparent;
+    font-family: 'Muli', sans-serif;
+    border-bottom: transparent; }
+    .collection-card .card-header h5 {
+      font-size: 1.5rem; }
+  .collection-card .collection-footer {
+    border-top: transparent; }
