@@ -24,7 +24,9 @@
   flex-direction: column; }
   #collection-page-container h4 {
     margin-top: 1rem;
-    align-self: center; }
+    align-self: center;
+    font-size: 2.5rem;
+    font-family: 'Muli', sans-serif; }
   #collection-page-container #archive-btn-div {
     align-self: center; }
   #collection-page-container #current-btn-div {
@@ -50,12 +52,16 @@
     margin: 2rem 2rem 25rem 2rem; }
     .collectable-list-container .add-collectable-btn .plus-btn {
       font-size: 50px; }
+    .collectable-list-container .add-collectable-btn p {
+      font-family: 'Muli', sans-serif;
+      font-size: 1.5rem; }
   .collectable-list-container .collectable-card {
     margin: 2rem 2rem 2rem 2rem;
     min-width: 15rem;
     min-height: 35rem;
     max-width: 15rem;
-    max-height: 35rem; }
+    max-height: 35rem;
+    font-family: 'Muli', sans-serif; }
     .collectable-list-container .collectable-card .card-body {
       overflow-y: auto; }
       .collectable-list-container .collectable-card .card-body ::-webkit-scrollbar {
@@ -68,9 +74,10 @@
       object-fit: cover; }
 
 .preview-img {
-  max-width: 50%; }
+  max-width: 60%;
+  align-self: center; }
 
 #dropzone-div {
   display: flex !important;
-  justify-content: right !important;
+  justify-content: center !important;
   flex-direction: column !important; }

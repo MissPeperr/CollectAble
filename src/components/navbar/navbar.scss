@@ -3,16 +3,28 @@
     width: 35px;
 }
 .navbar {
-    a {
+    #nav-header {
         font-family: 'Molle', cursive;        
         font-size: 30px;
         margin-right: .25rem;
     }
-}
-
-.nav-item {
-    .btn{
-        background-color: rgb(108, 162, 184);
-        border-color: rgb(107, 153, 172);
+    .nav-item {
+        .btn {
+            background-color: rgb(108, 162, 184);
+            border-color: rgb(107, 153, 172);
+        }
+    }
+    #home-btn {
+        :hover {
+            background-color: rgb(71, 108, 122);
+            border-color: rgb(51, 74, 83);
+        }
+    }
+    #log-out-btn {
+        padding-top: .5rem;
+        :hover {
+            background-color: rgb(71, 108, 122);
+            border-color: rgb(51, 74, 83);
+        }
     }
 }

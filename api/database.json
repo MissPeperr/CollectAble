@@ -72,7 +72,7 @@
     },
     {
       "title": "All my friends",
-      "description": "{null}",
+      "description": "There's so many in here!",
       "userId": 1,
       "id": 11
     },
@@ -83,10 +83,22 @@
       "id": 12
     },
     {
-      "title": "SO MANY THINGS",
-      "description": "LIKE WOW SO MANY",
+      "title": "Christmas Barbie Dolls",
+      "description": "Barbie Dolls from the Christmas Collection",
       "userId": 1,
-      "id": 13
+      "id": 17
+    },
+    {
+      "title": "Vinyl",
+      "description": "These are dope.",
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "title": "Brewery Glasses",
+      "description": "I definitely don't steal these from bars. 👍",
+      "userId": 1,
+      "id": 20
     }
   ],
   "collectables": [
@@ -182,7 +194,7 @@
     },
     {
       "title": "Spider Pluto",
-      "description": "Spider Pluto from the Halloween collection.\nNot sure of the price, since it was in a set of four!",
+      "description": "Spider Pluto from the Halloween collection.\nNot sure of the price, since it was in a set of four.",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536958460/wgsaf1iqiktvgeak0x0o.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": null,
@@ -244,9 +256,9 @@
       "title": "Strawberry Shortcake Dumbo",
       "description": "Straight from Japan!",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537450479/pbs4skyzfuoh9fgpjnhn.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$7.95",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 1,
       "id": 29
     },
@@ -269,16 +281,6 @@
       "isSold": false,
       "collectionId": 1,
       "id": 31
-    },
-    {
-      "title": "Medium Dumbo",
-      "description": "He's cute! From the Disney Store.",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537467241/mn2rgrxdify09nhw8vxc.jpg",
-      "boughtPrice": "$11.95",
-      "soldPrice": null,
-      "isSold": true,
-      "collectionId": 1,
-      "id": 32
     }
   ],
   "groups": [

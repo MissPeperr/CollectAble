@@ -14,9 +14,7 @@ export default class CollectableCard extends Component {
         super(props);
         this.state = {
             modal: false,
-            deleteModal: false,
-            // hidden: false,
-            // isSold: this.props.currentCollectable.isSold
+            deleteModal: false
         };
 
         this.toggle = this.toggle.bind(this);
@@ -41,17 +39,6 @@ export default class CollectableCard extends Component {
         DataManager.delete(string, id)
             .then(this.props.updateState);
     }
-    // Alerts for when the user clicks on the "I Sold This" button, however I don't think I should have it on this page.
-    // ifSold = () => {
-    //     if(this.state.isSold === true){
-    //         alert("This collectable was sold! This collectable has been taken out of your current collection, but can still be seen inside of your archives! If you didn't mean to sell this, click the \"I Sold This\" button again before saving.")              
-    //     } else if(this.state.isSold === false){
-    //         alert("Collectable has been put back in your current collection!")
-    //     } else {
-    //         alert("There was an error selling your collectable.")
-    //     }
-    // }
-
 
     render() {
         return (
@@ -64,7 +51,11 @@ export default class CollectableCard extends Component {
                         <CardSubtitle className="collectable-description">{this.props.currentCollectable.description}
                         </CardSubtitle>
                         <br></br>
+                        {this.props.currentCollectable.boughtPrice === "$0.00" ?
+                        <CardSubtitle></CardSubtitle>
+                        : 
                         <CardSubtitle>{this.props.currentCollectable.boughtPrice}</CardSubtitle>
+                        }
                     </CardBody>
                     <hr></hr>
                     <div className="collectable-footer">
@@ -75,7 +66,6 @@ export default class CollectableCard extends Component {
                             editCollectable={this.props.editCollectable}
                             toggle={this.toggle}
                             modal={this.state.modal} />
-                            {/* <Button color="success" onClick={this.userSoldItem}>I Sold This!</Button> */}
                         <Button id="delete-collectable-btn" onClick={() => {
                             this.toggleDelete();
                         }}>

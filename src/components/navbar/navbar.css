@@ -2,11 +2,21 @@
   height: 35px;
   width: 35px; }
 
-.navbar a {
+.navbar #nav-header {
   font-family: 'Molle', cursive;
   font-size: 30px;
   margin-right: .25rem; }
 
-.nav-item .btn {
+.navbar .nav-item .btn {
   background-color: #6ca2b8;
   border-color: #6b99ac; }
+
+.navbar #home-btn :hover {
+  background-color: #476c7a;
+  border-color: #334a53; }
+
+.navbar #log-out-btn {
+  padding-top: .5rem; }
+  .navbar #log-out-btn :hover {
+    background-color: #476c7a;
+    border-color: #334a53; }

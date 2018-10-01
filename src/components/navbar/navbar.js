@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap'
 import './navbar.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../images/CollectAble-Logo.png'
 import {
   Collapse,
@@ -10,6 +13,8 @@ import {
   Nav,
   NavItem,
   NavLink, } from 'reactstrap';
+  library.add(faHome);
+
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -42,15 +47,15 @@ export default class NavBar extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/collectionlist">CollectAble</NavbarBrand>
+          <NavbarBrand id="nav-header" href="/collectionlist">CollectAble</NavbarBrand>
           <img id="logo" alt="Collectable Logo" src={Logo} />
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {/* <NavItem>
-                <NavLink href="/settings/">Settings</NavLink>
-              </NavItem> */}
               <NavItem>
+                <NavLink id="home-btn" href="/collectionlist"><Button>Home</Button></NavLink>
+              </NavItem>
+              <NavItem id="log-out-btn">
                 <Button onClick={this.handleLogout}>Log Out</Button>
               </NavItem>
           </Nav>

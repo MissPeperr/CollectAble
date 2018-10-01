@@ -7,6 +7,8 @@
     h4 {
         margin-top: 1rem;
         align-self: center;
+        font-size: 2.5rem;
+        font-family: 'Muli', sans-serif;
     }
     #archive-btn-div {
         align-self: center;
@@ -34,6 +36,10 @@
             .plus-btn {
                 font-size: 50px;
             }
+            p {
+                font-family: 'Muli', sans-serif;
+                font-size: 1.5rem;
+            }
                             
     }
     .collectable-card{
@@ -42,6 +48,7 @@
         min-height: 35rem;
         max-width: 15rem;
         max-height: 35rem;
+        font-family: 'Muli', sans-serif;
         @extend %best-box-shadow;
 
         .card-body {
@@ -70,10 +77,11 @@
 }
 
 .preview-img {
-    max-width: 50%;
+    max-width: 60%;
+    align-self: center;
 }
 #dropzone-div{
     display: flex !important;
-    justify-content: right !important;
+    justify-content: center !important;
     flex-direction: column !important;
 }
