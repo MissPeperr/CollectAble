@@ -29,7 +29,7 @@ class CollectionCard extends Component {
 
     toggleDelete = () => {
         this.setState({
-            deleteModal: !this.state.modal
+            deleteModal: !this.state.deleteModal
         });
     }
 

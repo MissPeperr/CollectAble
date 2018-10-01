@@ -23,6 +23,14 @@
       "firstName": "",
       "lastName": "",
       "id": 3
+    },
+    {
+      "password": "me",
+      "email": "hithere@me.com",
+      "DOB": "",
+      "firstName": "",
+      "lastName": "",
+      "id": 4
     }
   ],
   "collections": [
@@ -51,22 +59,46 @@
       "id": 4
     },
     {
-      "title": "Test the test",
-      "description": "The collection I test stuff in",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "title": "All my friends",
-      "description": "null",
-      "userId": 1,
-      "id": 7
-    },
-    {
       "title": "Just stuff I like",
       "description": "All the things",
       "userId": 2,
       "id": 8
+    },
+    {
+      "title": "Souls",
+      "description": "They're fun!",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "title": "All my friends",
+      "description": "There's so many in here!",
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "title": "Let's Collect Things!",
+      "description": "ALL THE THINGS!",
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "title": "Christmas Barbie Dolls",
+      "description": "Barbie Dolls from the Christmas Collection",
+      "userId": 1,
+      "id": 17
+    },
+    {
+      "title": "Vinyl",
+      "description": "These are dope.",
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "title": "Brewery Glasses",
+      "description": "I definitely don't steal these from bars. 👍",
+      "userId": 1,
+      "id": 20
     }
   ],
   "collectables": [
@@ -74,18 +106,18 @@
       "id": 1,
       "collectionId": 1,
       "groupId": 1,
-      "title": "Mickey Mouse",
-      "description": "He's cute!",
+      "title": "Adventureland Mickey Mouse",
+      "description": "From DisneyWorld",
       "imageURL": "http://res.cloudinary.com/midstone-collectable/image/upload/ar_1:1,c_lfill,g_auto,w_250/v1536938467/IMG_20180913_073150.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": "",
-      "isSold": false
+      "isSold": true
     },
     {
       "title": "Dumbo Pin",
       "description": "Christmas Dumbo Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536949088/gr4br05kzogrj8omqesy.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$5.95",
       "soldPrice": null,
       "isSold": true,
       "collectionId": 2,
@@ -101,30 +133,20 @@
       "id": 3
     },
     {
-      "title": "Spring Elsa",
-      "description": "Small Spring Elsa part of the Frozen Spring Collection",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536950411/wmetcimdjnbxycnkujpf.jpg",
-      "boughtPrice": "$0.00",
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 1,
-      "id": 4
-    },
-    {
       "title": "Spring Sven",
-      "description": "Small Spring Sven that's part of the Frozen Spring collection",
+      "description": "Small Spring Sven that's part of the Frozen Spring collection. Not sure of the price since it was in a set!",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536951756/bhznajrot0ivubmqbtfk.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 1,
       "id": 5
     },
     {
       "title": "Strawberry Minnie",
-      "description": "Small Strawberry Minnie from Target",
+      "description": "Small Strawberry Minnie from Target.",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536951882/fz8r48sltnyhs0vwknkc.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$4.95",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -132,21 +154,21 @@
     },
     {
       "title": "Corpse Bride Minnie",
-      "description": "Mini Corpse Bride Minnie from the Halloween set",
+      "description": "Mini Corpse Bride Minnie from the Halloween set. Not sure of the price since it was in a set of four!",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536951940/rjkvnofjrw3zbhcug4db.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 1,
       "id": 7
     },
     {
       "title": "Elsa",
-      "description": "Small Elsa",
+      "description": "Small Elsa is pretty cute!",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536952103/gd10fzssoe3x8g3pd9yk.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$4.95",
       "soldPrice": null,
-      "isSold": false,
+      "isSold": true,
       "collectionId": 1,
       "id": 8
     },
@@ -154,7 +176,7 @@
       "title": "Minnie",
       "description": "Large Minnie",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536957552/qlfrz3jr0xhbvs3vaigi.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$24.95",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 1,
@@ -164,7 +186,7 @@
       "title": "Space Mountain Pin",
       "description": "Stitch Rides Space Mountain from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536957761/lbxgevjrn96ovdahkyvt.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$5.95",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 2,
@@ -172,7 +194,7 @@
     },
     {
       "title": "Spider Pluto",
-      "description": "Spider Pluto from the Halloween collection",
+      "description": "Spider Pluto from the Halloween collection.\nNot sure of the price, since it was in a set of four.",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1536958460/wgsaf1iqiktvgeak0x0o.jpg",
       "boughtPrice": "$0.00",
       "soldPrice": null,
@@ -184,7 +206,7 @@
       "title": "Baymax Pin",
       "description": "Christmas Baymax Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537019991/yn426jfqxkpultrhpi0c.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$5.95",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 2,
@@ -204,7 +226,7 @@
       "title": "Frozen Ever After Pin",
       "description": "Frozen Ever After Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537208189/ye52swuwnj5lvuy7segk.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$5.95",
       "soldPrice": null,
       "isSold": true,
       "collectionId": 2,
@@ -214,71 +236,11 @@
       "title": "Rockin' Roller Coaster Pin",
       "description": "The Rockin' Roller Coaster Pin from DisneyWorld",
       "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537282146/ylvbnfbadjkymz2lwrrr.jpg",
-      "boughtPrice": "$0.00",
+      "boughtPrice": "$5.95",
       "soldPrice": null,
       "isSold": false,
       "collectionId": 2,
       "id": 17
-    },
-    {
-      "title": "test",
-      "description": "testing",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376654/yiipynqn29aoeinhard0.jpg",
-      "boughtPrice": "$0.00",
-      "soldPrice": null,
-      "isSold": true,
-      "collectionId": 5,
-      "id": 18
-    },
-    {
-      "title": "sup",
-      "description": "dudes",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537376715/eiyhiok8myt1pn1ncuuu.jpg",
-      "boughtPrice": "$560.00",
-      "soldPrice": null,
-      "isSold": true,
-      "collectionId": 5,
-      "id": 21
-    },
-    {
-      "title": "what",
-      "description": "the heck",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537386944/t3imwd2ckqpzpdj5drfs.jpg",
-      "boughtPrice": "$4.95",
-      "soldPrice": null,
-      "isSold": true,
-      "collectionId": 5,
-      "id": 24
-    },
-    {
-      "title": "hey hey you you",
-      "description": "I don't like your girlfriend",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537392209/hcxaqjnp5bpobxm6nhir.jpg",
-      "boughtPrice": "$0.00",
-      "soldPrice": null,
-      "isSold": true,
-      "collectionId": 5,
-      "id": 25
-    },
-    {
-      "title": "pls work",
-      "description": "for the love of god",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537392252/tu31hpxgmdqg2bnookst.jpg",
-      "boughtPrice": "$0.00",
-      "soldPrice": null,
-      "isSold": false,
-      "collectionId": 5,
-      "id": 26
-    },
-    {
-      "title": "test",
-      "description": "testing the stuuuuuuuuffffff",
-      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537392629/qq7rgoi4wdt5uzmc8x40.jpg",
-      "boughtPrice": "$0.00",
-      "soldPrice": null,
-      "isSold": true,
-      "collectionId": 5,
-      "id": 27
     },
     {
       "title": "test",
@@ -289,6 +251,36 @@
       "isSold": false,
       "collectionId": 8,
       "id": 28
+    },
+    {
+      "title": "Strawberry Shortcake Dumbo",
+      "description": "Straight from Japan!",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537450479/pbs4skyzfuoh9fgpjnhn.jpg",
+      "boughtPrice": "$7.95",
+      "soldPrice": null,
+      "isSold": true,
+      "collectionId": 1,
+      "id": 29
+    },
+    {
+      "title": "Spring Anna",
+      "description": "Small Spring Anna from the Frozen Spring collection. Not sure of the price since it was in a set of four.",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537450939/nkupihmsgyi25xqgrrpm.jpg",
+      "boughtPrice": "$0.00",
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 1,
+      "id": 30
+    },
+    {
+      "title": "Snowgie",
+      "description": "Small Snowgie from the Frozen Spring Collection. Not sure of the price since it was in a set of four.",
+      "imageURL": "https://res.cloudinary.com/midstone-collectable/image/upload/v1537450993/xlu5vocwms5eraiiflez.jpg",
+      "boughtPrice": "$0.00",
+      "soldPrice": null,
+      "isSold": false,
+      "collectionId": 1,
+      "id": 31
     }
   ],
   "groups": [
