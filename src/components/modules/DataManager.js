@@ -1,4 +1,4 @@
-const remoteURL = "https://collect-able-server.herokuapp.com/"
+const remoteURL = "https://collect-able-server.herokuapp.com"
 // const remoteURL = "http://localhost:8088"
 
 export default Object.create(null, {
