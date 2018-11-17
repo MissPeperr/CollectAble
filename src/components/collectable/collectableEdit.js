@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, FormGroup, Alert } from 'reactstrap';
-import DataManager from '../modules/DataManager';
 
 class CollectableEdit extends Component {
     constructor(props) {
@@ -9,7 +8,6 @@ class CollectableEdit extends Component {
             visible: false,
             title: this.props.currentCollectable.title,
             description: this.props.currentCollectable.description,
-            //imageURL :this.props.currentCollectable.imageURL
             boughtPrice: this.props.currentCollectable.boughtPrice,
             soldPrice: this.props.currentCollectable.soldPrice,
             isSold: this.props.currentCollectable.isSold
@@ -49,7 +47,6 @@ class CollectableEdit extends Component {
         const collectable = {
             title: this.state.title,
             description: this.state.description,
-            // imageURL: this.state.imageURL,
             boughtPrice: this.state.boughtPrice,
             soldPrice: this.state.soldPrice,
             isSold: this.state.isSold,

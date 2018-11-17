@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Button, CardTitle, CardText} from 'reactstrap';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
@@ -58,7 +58,6 @@ class CollectionList extends Component {
                         )
 
                     }
-                {/* </section> */}
 
             </div>
         )

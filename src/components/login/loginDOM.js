@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Input } from 'reactstrap';
 import DataManager from '../modules/DataManager';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './login.css'
