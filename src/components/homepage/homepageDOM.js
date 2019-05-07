@@ -66,6 +66,13 @@ class HomePage extends Component {
     render() {
         return (
             <React.Fragment>
+                <Route exact path="/" render={(props) => {
+                    return <div id="home-container">
+
+                    </div>
+
+                }
+                }/>
                 <Route exact path="/collectionlist" render={(props) => {
                     return <CollectionList {...props}
                         user={this.state.user}
@@ -92,5 +99,4 @@ class HomePage extends Component {
     }
 }
 
-
-export default HomePage
+export default HomePage;

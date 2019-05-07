@@ -18,7 +18,6 @@ class CollectionCard extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.toggleDelete = this.toggleDelete.bind(this);
-
     }
 
     toggle = () => {

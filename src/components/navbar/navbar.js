@@ -12,7 +12,7 @@ import {
   Nav,
   NavItem,
   NavLink, } from 'reactstrap';
-  library.add(faHome);
+library.add(faHome);
 
 
 export default class NavBar extends Component {

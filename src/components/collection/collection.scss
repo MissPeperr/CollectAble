@@ -10,13 +10,11 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     font-family: 'Muli', sans-serif;
-    // font-family: 'Nanum Myeongjo', serif;
-    // font-family: 'Sorts Mill Goudy', serif;
 
 }
 
 .add-collection-btn {
-    @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px); 
+    @include add-new-card(#b3b3b3, inset, rgba(148,148,148,1), 0px 0px 17px 5px);
     margin: 2rem 2rem 2rem 2rem;
     @extend %card-size;
     .plus-btn{
@@ -52,7 +50,6 @@ body{
     }
     .card-header {
         background-color: transparent;
-        // font-family: 'Julius Sans One', sans-serif;
         font-family: 'Muli', sans-serif;
         border-bottom: transparent;
         h5 {

@@ -7,9 +7,8 @@ import ApplicationViews from "./components/ApplicationViews";
 
 export default class App extends Component {
     // Check if user are in local/session storage
-    isAuthenticated = () => (localStorage.getItem("user") !== null) || (sessionStorage.getItem("user") !== null)    
+    isAuthenticated = () => (localStorage.getItem("user") !== null) || (sessionStorage.getItem("user") !== null)
     render() {
-        console.log("render app.js")
         return (
             <React.Fragment>
                 {
@@ -24,4 +23,4 @@ export default class App extends Component {
             </React.Fragment>
         )
     }
-} 
+}
