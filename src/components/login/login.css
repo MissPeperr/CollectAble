@@ -5,7 +5,7 @@ button:focus {
   outline: none; }
 
 input:focus {
-  box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd,  -3px 3px 30px #10abff; }
+  box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff; }
 
 #login-div {
   width: 100wh;
@@ -46,30 +46,30 @@ input:focus {
         margin: 0rem 4rem 0rem 4rem;
         border-radius: 9999em;
         border: 0; }
-      #login-div #form-container #login-form #password {
-        margin: 0rem 4rem .5rem 4rem;
-        border-radius: 9999em; }
-      #login-div #form-container #login-form #remember-me-div {
-        margin-bottom: .1rem;
-        align-items: center;
-        display: flex;
-        justify-content: center; }
-    #login-div #form-container #register-form {
+    #login-div #form-container #password {
+      margin: 0rem 4rem .5rem 4rem;
+      border-radius: 9999em; }
+    #login-div #form-container #remember-me-div {
+      margin-bottom: .1rem;
+      align-items: center;
       display: flex;
-      justify-content: center;
-      flex-direction: column; }
-      #login-div #form-container #register-form h4 {
-        text-align: center; }
-      #login-div #form-container #register-form label {
-        margin: 0rem 2rem 0rem 2rem; }
-      #login-div #form-container #register-form button {
-        margin-bottom: 2rem; }
-      #login-div #form-container #register-form #registerEmail {
-        margin: 0rem 4rem 0rem 4rem;
-        border-radius: 9999em; }
-      #login-div #form-container #register-form #registerPassword {
-        margin: 0rem 4rem 2rem 4rem;
-        border-radius: 9999em; }
+      justify-content: center; }
+  #login-div #register-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    #login-div #register-form h4 {
+      text-align: center; }
+    #login-div #register-form label {
+      margin: 0rem 2rem 0rem 2rem; }
+    #login-div #register-form button {
+      margin-bottom: 2rem; }
+    #login-div #register-form #registerEmail {
+      margin: 0rem 4rem 0rem 4rem;
+      border-radius: 9999em; }
+    #login-div #register-form #registerPassword {
+      margin: 0rem 4rem 2rem 4rem;
+      border-radius: 9999em; }
 
 @-webkit-keyframes Gradient {
   0% {
